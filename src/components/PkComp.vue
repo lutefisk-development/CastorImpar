@@ -1,6 +1,6 @@
 <template>
    <div class="pkcomp">
-      <button @click="order">{{ text }}</button>
+      <button @click="order(1000, 2000)">{{ text }}</button>
    </div>
 </template>
 
@@ -14,9 +14,9 @@ export default {
       }
    },
    methods: {
-      // Denna funktionen skapar ett random tal mellan 0 och 2000. När vi ska göra den riktiga funktionen som skapar beställningsnummret kan vi inte använda denna finktionen!
-      order: function() {
-         this.counter = Math.floor(Math.random() * 2001)
+      // Denna funktionen skapar ett random tal mellan 1000 och 2000. När vi ska göra den riktiga funktionen som skapar beställningsnummret kan vi inte använda denna finktionen!
+      order: function(min, max) {
+         this.counter = Math.floor(Math.random() * (max - min) + min);
          alert('ditt beställningsnummer är ' + this.counter);
       }
    }
