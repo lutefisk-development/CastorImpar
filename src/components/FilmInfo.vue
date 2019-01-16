@@ -34,7 +34,7 @@
     
     padding: 5px;
     border: 20px solid transparent;
-    border-image: url(/images/film-solid.svg) 90 stretch;
+    border-image: url(../images/film-solid.svg) 90 stretch;
     text-align: center;
     word-wrap: normal;
     width: 450px;
