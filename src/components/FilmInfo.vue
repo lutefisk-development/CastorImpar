@@ -5,7 +5,7 @@
       type="text/html"
       width="200"
       height="250"
-      src="https://www.youtube.com/embed/sGbxmsDFVnE"
+      :src="youtube"
       frameborder="0"
       allowfullscreen
     ></iframe>
@@ -22,13 +22,17 @@
       <div class="modal-dialog  modal-dialog-centered" role="document">
          <div class="modal-content modal-custom inner-modal">
             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+               <h5 class="modal-title" id="exampleModalCenterTitle">{{ title }}</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
             <div class="modal-body col-sm-12">
                 ...
+            <div class="modal-body">
+               <ul>
+                  <li v-for="name in productionCountries">{{ name.country }}</li>
+               </ul>
             </div>
             <div class="modal-footer"></div>
             
@@ -121,12 +125,35 @@
 </style>
 
 <script>
+import picture1 from '@/images/call-me-by-your-name1.jpg'
+import picture2 from '@/images/call-me-by-your-name2.jpg'
+
 export default {
     name: 'FilmInfo',
     data() {
         return {
-            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, beatae? Ut consectetur eligendi, porro consequatur quaerat dolore optio, accusantium cupiditate, "
-        }
+            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, beatae? Ut consectetur eligendi, porro consequatur quaerat dolore optio, accusantium cupiditate, ",
+            title: 'Call Me By Your Name',
+            productionCountries: [
+               { country: 'Italien' },
+               { country: 'USA' } 
+            ],
+            productionYear: '2017',
+            length: '132',
+            genre: 'Drama',
+            language: 'engelska',
+            subtitles: 'svenska',
+            director: 'Luca Guadagnino',
+            actors: [
+               { actor1: 'Armie Hammer' },
+               { actor2: 'Timothée Chalamet' },
+               { actor3: 'Michael Stuhlbarg' }
+            ],
+            youtube: 'https://www.youtube.com/embed/sGbxmsDFVnE',
+            description: `Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p><p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.`,
+            picture1: picture1,
+            picture2: picture2 
+         }
     }
 }
 </script>
