@@ -49,30 +49,29 @@
     justify-content: space-evenly;
     display: flex;
     width: 200px;
-    height: 50px;
+    height: 30px;
   
 
 }
 
 .button-group button {
     font-family: 'Roboto', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     font-weight: 500;
     color: white;
     background-color: black;
     border: none;
-    
+    height: 25px;
+    width: 90px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.6s ease 0s;
     cursor: pointer;
     outline: none;
-    margin-right: 20px;
-    margin-top: 0;
-    padding: 1px;
+    padding: 3px;
 }
 
 .button-group button:hover {
