@@ -2,8 +2,8 @@
   <div class="flex-container film-box">
     <iframe
       type="text/html"
-      width="400"
-      height="385"
+      width="200"
+      height="250"
       src="https://www.youtube.com/embed/sGbxmsDFVnE"
       frameborder="0"
       allowfullscreen
@@ -55,8 +55,9 @@
     border-image: url(../images/film-solid.svg) 90 stretch;
     text-align: center;
     word-wrap: normal;
-    width: 450px;
-    height: 450px;
+    width: 250px;
+    height: 350px;
+    font-size: 12px;
         
   
 }
@@ -90,7 +91,7 @@
     outline: none;
     margin-right: 20px;
     margin-top: 0;
-    padding: 5px;
+    padding: 1px;
 }
 
 .button-group button:hover {
@@ -107,7 +108,7 @@ export default {
     name: 'FilmInfo',
     data() {
         return {
-            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, beatae? Ut consectetur eligendi, porro consequatur quaerat dolore optio, accusantium cupiditate, velit aperiam laboriosam deserunt praesentium accusamus alias veritatis qui error."
+            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, beatae? Ut consectetur eligendi, porro consequatur quaerat dolore optio, accusantium cupiditate, "
         }
     }
 }
