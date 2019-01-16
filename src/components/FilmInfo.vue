@@ -1,4 +1,5 @@
 <template>
+
   <div class="flex-container film-box">
     <iframe
       type="text/html"
@@ -16,23 +17,28 @@
     </div>
     
     <!-- Här börjar modal -->
-    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-         <div class="modal-content inner-modal">
+     <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        
+      <div class="modal-dialog  modal-dialog-centered" role="document">
+         <div class="modal-content modal-custom inner-modal">
             <div class="modal-header">
                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
-            <div class="modal-body">
-                  ...
+            <div class="modal-body col-sm-12">
+                ...
             </div>
             <div class="modal-footer"></div>
+            
          </div>
+        
       </div>
    </div>
   </div>
+ 
+  
 </template>
 
 <style>
@@ -100,6 +106,18 @@
   transform: translateY(-7px);
   
 }
+
+.modal-custom {
+    padding: 5px;
+    border: 20px solid transparent;
+    border-image: url(../images/film-solid.svg) 90 stretch;
+    font-size: 14px;
+    width: 1000px;
+    height: 500px;
+   
+}
+
+
 </style>
 
 <script>
