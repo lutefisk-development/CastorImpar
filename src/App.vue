@@ -1,12 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav" class="nav navbar navbar-expand-lg navbar-light bg-light">
+          <navbar>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <router-link v-for="route in this.$router.options.routes" tag="li" :to="route.path">
+                <a class='navbar-brand'>{{ route.name }}</a>
+        </router-link>
+      </li>
+    </ul>
+  </div>
+</nav>
+          </navbar>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+  import Navbar from './components/Navbar'
+export default {
+  name: 'app',
+  components: {
+    'Navigation': Navbar
+  }
+}
+</script>
 
 <style>
 #app {
@@ -29,3 +55,4 @@
   color: #42b983;
 }
 </style>
+
