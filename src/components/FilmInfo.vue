@@ -157,6 +157,9 @@
    padding-bottom: 0;
 }
 
+.modal-body>iframe {
+   width: 100%;
+}
 
 
 </style>
