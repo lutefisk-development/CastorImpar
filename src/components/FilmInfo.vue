@@ -51,9 +51,6 @@
    </div>
 
 
-   <!-- <ul>
-                        <li v-for="name in productionCountries">{{ name.country }}</li>
-                     </ul> -->
 </template>
 
 <style>
