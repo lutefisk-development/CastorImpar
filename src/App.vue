@@ -32,6 +32,7 @@ export default {
 }
 </script>
 
+
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -39,6 +40,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #79924E;
 }
 #nav {
   padding: 30px;
