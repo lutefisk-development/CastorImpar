@@ -79,6 +79,7 @@
     width: 250px;
     height: 350px;
     font-size: 12px;
+    margin: auto;
         
   
 }
