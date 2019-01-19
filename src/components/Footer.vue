@@ -33,7 +33,7 @@ export default {
 
 <style>
 .footer {
-  background-color: #0e0052;
+  background-color: #79924e;
   color: white;
 }
 .footer-box {
