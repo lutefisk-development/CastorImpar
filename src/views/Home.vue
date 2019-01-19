@@ -1,11 +1,12 @@
 <template>
 	<div>
 <navbar> </navbar>
+  
     <MovieSelector></MovieSelector>
-    <carousel></carousel>
-
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Movieholder></Movieholder>
+   
+    <!--<img alt="Vue logo" src="../assets/logo.png">-->
+    <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <Footer></Footer>
   </div>
 </template>
@@ -14,16 +15,17 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
-import carousel from "@/components/MovieCarousel.vue";
 import MovieSelector from "@/components/movieChoiseBox.vue";
+import Movieholder from "@/components/Movieholder.vue";
 
 export default {
   name: "home",
   components: {
      MovieSelector,
-     carousel,
+     Movieholder,
      HelloWorld,
-    Footer
+    Footer,
+    
   }
 };
 </script>
