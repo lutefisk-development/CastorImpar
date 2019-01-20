@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style>
+.order {
+  font-weight: bold;
+}
 .return-box {
   background-color: #79924e;
   height: 20vh;
