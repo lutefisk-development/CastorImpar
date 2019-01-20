@@ -36,7 +36,7 @@
   }
 
   .upper_choise {
-    background-color: #F5F7E1;
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -44,7 +44,7 @@
   }
 
   .lower_choise {
-    background-color: #F5F7E1;
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -53,27 +53,32 @@
   }
 
   .movie_choise {
+    background-color: #F5F7E1;
     border: 1px solid black;
     padding:4px 6px 0px 6px;
-    width:64vw;
+    width:67vw;
     
   }
 
   .date_box{
+    background-color: #F5F7E1;
     border: 1px solid black;
     padding:4px 6px 0px 6px;
-
+    width: 22vw;
 
   } 
 
   .city_box, .cinema_box, .filter_box {
+    background-color: #F5F7E1;
     border: 1px solid black;
     padding:4px 6px 0px 6px;
+    width: 29vw;
   }
 
-  p {
-    font-size: 20px;
+  .city_box >p , .cinema_box > p , .filter_box > p, .date_box > p, .movie_choise > p {
+    font-size: 16px;
     font-weight: bold;
+    padding-top: 1vh;
   }
 
   .fas.fa-caret-down {

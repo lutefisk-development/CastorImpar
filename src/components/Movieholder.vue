@@ -1,7 +1,9 @@
 <template>
   <div class="movie_container">
     <div class="img_holder">
-      <img src="" alt="Aquaman">
+      <img src="" alt="Aquaman"><br>
+      <i class="fas fa-angle-left"></i>
+      <i class="fas fa-angle-right"></i>
     </div>
     <div class="information_holder">
       <div class="description_info">
@@ -25,12 +27,14 @@
 <style>
 
   .movie_container {
-    height: 60vh;
+    height: 50vh;
     background-color: white;
     margin-top: 5vh;
     margin-bottom: 30vh;
     border-top: 3px solid black; 
   }
+
+  
   
   .information_holder {
     display: flex;
@@ -43,7 +47,6 @@
     background-color: yellow;
     height: 25vh;
     width: 60vw;
-    margin-top: 50vh;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     text-align: left;
@@ -51,11 +54,14 @@
 
   }
 
+  .img_holder{
+    background-color: darkblue;
+  }
+
   .short_info{
     background-color: green;
     height: 25vh;
     width:40vw;
-    margin-top: 50vh;
     border-top:3px solid black;
     border-bottom: 3px solid black;
     border-left: 3px solid black;
@@ -77,6 +83,17 @@
   p{
     font-size: 13px;
     line-height: 5px;
+  }
+
+  .fas.fa-angle-left, .fas.fa-angle-right{
+    font-size: 40px;
+    padding-top:10vh;
+    padding-bottom:10vh;
+    color:white;
+  }
+
+  .fas.fa-angle-left{
+    padding-right:80vw;
   }
   
 </style>
