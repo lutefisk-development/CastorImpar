@@ -23,7 +23,7 @@
 			border-bottom: 3px solid black;
 			margin-bottom: 5vh;
 			padding: 0px 10px 0px 10px;
-			margin-top: -20vh;
+			margin-top: 20vh;
 
 		}
 
