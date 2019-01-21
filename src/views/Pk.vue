@@ -1,18 +1,18 @@
 <template>
    <div class="pk">
-      <pkcomp></pkcomp>
-      <filmInfo></filmInfo>
+      <MVP></MVP>
+      <Footer></Footer>
    </div>
 </template>
 
 <script>
-import pkcomp from '@/components/PkComp.vue'
-import FilmInfo from '@/components/FilmInfo.vue'
+import MVP from '@/components/CompleteMVP.vue'
+import Footer from '@/components/Footer.vue'
 export default {
    name: 'pk',
    components: {
-      pkcomp,
-      FilmInfo
+      MVP,
+      Footer
    }
 };
 </script>
