@@ -1,12 +1,12 @@
 <template>
 		<div class="newMovieContainer">
-			<div class="newMovie">
+			<div class="newMovie first">
 			</div>
-			<div class="newMovie">
+			<div class="newMovie second">
 			</div>
-			<div class="newMovie">
+			<div class="newMovie third">
 			</div>
-			<div class="newMovie">
+			<div class="newMovie fourth">
 			</div>
 		</div>
 	
@@ -33,6 +33,22 @@
 			height:10vh;
 			border:2px solid black;
 			background-color: white;
+		}
+
+		.newMovie.first{
+			background-image: url("../assets/movieposter2.jpeg");
+		}
+
+		.newMovie.second{
+			background-image: url("../assets/movieposter3.jpeg");
+		}
+
+		.newMovie.third{
+			background-image: url("../assets/movieposter4.jpeg");
+		}
+
+		.newMovie.fourth{
+			background-image: url("../assets/movieposter1.jpg");
 		}
 
 		h3{

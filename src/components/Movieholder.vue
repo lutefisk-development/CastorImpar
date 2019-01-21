@@ -1,7 +1,6 @@
 <template>
   <div class="movie_container">
     <div class="img_holder">
-      <img src="" alt="Aquaman"><br>
       <i class="fas fa-angle-left"></i>
       <i class="fas fa-angle-right"></i>
     </div>
@@ -11,12 +10,14 @@
         <h5>{{title1}}</h5>
         <br>
         <p>{{description1}}</p>
+
       </div>
       <div class="short_info">
         <br>
         <p>Speltid: {{playtime1}}</p>
         <p>Språk: {{language1}}</p>
         <p>Undertext: {{subtitle1}}</p>
+        <i class="fas fa-ellipsis-h"></i>
       </div>
     </div>
     
@@ -44,7 +45,7 @@
   }
 
   .description_info{
-    background-color: yellow;
+    background-color: #F5F7E1;
     height: 25vh;
     width: 60vw;
     border-top: 3px solid black;
@@ -55,11 +56,11 @@
   }
 
   .img_holder{
-    background-color: darkblue;
+    background-image: url("../assets/movieposter1.jpg");
   }
 
   .short_info{
-    background-color: green;
+    background-color: #F5F7E1;
     height: 25vh;
     width:40vw;
     border-top:3px solid black;
@@ -96,6 +97,9 @@
     padding-right:80vw;
   }
   
+  .fas.fa-ellipsis-h {
+    margin: 5vh 0vw 1vh 26vw;
+  }
 </style>
 
 <script>
