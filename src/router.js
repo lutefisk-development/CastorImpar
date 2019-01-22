@@ -41,10 +41,19 @@ export default new Router({
         import( /* webpackChunkName: "about" */ "./views/MyPages.vue")
     },
     {
+      path: "/confirmorder",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "confirmorder" */ "./views/ConfirmOrder.vue")
+    },
+    {
       path: "/pk",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+<<<<<<< Updated upstream
       component: () => import( /* webpackChunkName: "pk" */ "./views/Pk.vue")
     },
     {
@@ -53,6 +62,18 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import( /* webpackChunkName: "ConfirmOrder" */ "./views/ConfirmOrder.vue")
+=======
+      component: () =>
+        import(/* webpackChunkName: "pk" */ "./views/Pk.vue")
+    },
+    {
+      path: "/calender",
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "calender" */ "./views/Calender.vue")
+>>>>>>> Stashed changes
     }
 
   ]
