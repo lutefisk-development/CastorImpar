@@ -8,6 +8,18 @@
 
 </template>
 
+<style>
+	
+.rabatt {
+   background-color: #79924E;
+}
+
+p {
+	margin-bottom: 0;
+	color: white;
+}
+</style>
+
 <script>
 	export default {
 		name: 'Rabatt',
