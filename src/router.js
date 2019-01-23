@@ -41,12 +41,12 @@ export default new Router({
         import( /* webpackChunkName: "about" */ "./views/MyPages.vue")
     },
     {
-      path: "/confirmorder",
+      path: "/order",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "confirmorder" */ "./views/ConfirmOrder.vue")
+        import(/* webpackChunkName: "order" */ "./views/ConfirmOrder.vue")
     },
     {
       path: "/pk",
