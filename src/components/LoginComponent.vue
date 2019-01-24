@@ -20,7 +20,7 @@
                      <input type="password" class="form-control login-form" placeholder="Lösenord" aria-label="Lösenord" aria-describedby="addon-wrapping">
                   </div>
                   <p class="login-form login-lower glömt">Jag har glömt mitt lösenord</p>
-                  <button type="button" class="btn btn-primary login-form login-button" data-dismiss="modal">LOGGA IN</button>
+                  <router-link to="/MyPages" tag="button" data-dismiss="modal" class="btn btn-primary login-form login-button">LOGGA IN</router-link>
                </div>
                <div class="modal-footer login-footer"></div>
             </div>
@@ -53,7 +53,7 @@
    }
 
    .login-lower {
-      margin-bottom: 100px !important;
+      margin-bottom: 147px !important;
    }
 
    .glömt {
