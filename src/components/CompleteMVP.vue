@@ -89,9 +89,6 @@
    background-color: #79924E;
 }
 
-.rabatt {
-   background-color: #79924E;
-}
 .outer {
    color: white;
 }

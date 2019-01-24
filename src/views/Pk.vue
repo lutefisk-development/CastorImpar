@@ -6,6 +6,7 @@
    </div>
 </template>
 
+
 <script>
 import MVP from '@/components/CompleteMVP.vue'
 import Footer from '@/components/Footer.vue'
