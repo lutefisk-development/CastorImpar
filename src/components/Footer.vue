@@ -32,12 +32,13 @@ export default {
 </script>
 
 <style>
-.footer {
-  background-color: #0e0052;
+..footer {
+  background-color: #79924e;
   color: white;
 }
 .footer-box {
-  margin: 1vh 10vh;
+  margin: 1vh 1vh;
+  border-top: 4px solid #c2992a;
 }
 a {
   color: white;
