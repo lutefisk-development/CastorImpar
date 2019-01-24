@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style>
-..footer {
+.footer {
   background-color: #79924e;
   color: white;
 }
