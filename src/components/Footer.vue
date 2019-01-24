@@ -37,7 +37,7 @@ export default {
   color: white;
 }
 .footer-box {
-  margin: 1vh 1vh;
+  margin: auto;
   border-top: 4px solid #c2992a;
 }
 a {
