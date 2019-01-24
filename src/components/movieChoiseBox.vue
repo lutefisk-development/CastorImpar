@@ -24,6 +24,10 @@
 
 
 <style>
+  * {
+    overflow-x: hidden;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
