@@ -1,6 +1,6 @@
 <template>
   <nav class="footer navbar navbar-expand-lg navbar-bark">
-    
+    <div class="footer-box">
       <div class="links col-sm-auto">
         <a class="row" href="#">{{ link1 }}</a>
         <a class="row" href="#">{{ link2 }}</a>
@@ -11,7 +11,7 @@
         <a class="row" href="https://sv-se.facebook.com/" target="_blank">{{ link5 }}</a>
         <a class="row" href="https://www.instagram.com/?hl=sv" target="_blank">{{ link6 }}</a>
       </div>
-  
+  </div>
   </nav>
 </template>
 
