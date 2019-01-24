@@ -25,7 +25,7 @@
 
 <style>
   * {
-    overflow-x: hidden;
+    overflow-x: none;
   }
 
   .container {
