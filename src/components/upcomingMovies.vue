@@ -4,10 +4,7 @@
 			</div>
 			<div class="newMovie second">
 			</div>
-			<div class="newMovie third">
-			</div>
-			<div class="newMovie fourth">
-			</div>
+		
 		</div>
 	
 </template>
@@ -28,28 +25,22 @@
 		}
 
 		.newMovie {
-			margin-top: 5vh;
-			width: 15vw;
-			height:10vh;
-			border:2px solid black;
-			background-color: white;
+			margin: 5px;
+			width: 50vw;
+		
 		}
 
 		.newMovie.first{
 			background-image: url("../assets/movieposter2.jpeg");
+			background-size: cover;
 		}
 
 		.newMovie.second{
 			background-image: url("../assets/movieposter3.jpeg");
+			background-size: cover;
 		}
 
-		.newMovie.third{
-			background-image: url("../assets/movieposter4.jpeg");
-		}
-
-		.newMovie.fourth{
-			background-image: url("../assets/movieposter1.jpg");
-		}
+		
 
 		h3{
 			padding-top: 5vh;
