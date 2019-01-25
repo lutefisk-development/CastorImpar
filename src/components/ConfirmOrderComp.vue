@@ -1,37 +1,43 @@
 <template>
   <div class="order">
-    <div class="top-box"></div>
-    <h3>Tack för din bokning!</h3>
-    <div>Ditt bokningsnummer att att uppge i kassan: {{ booknr }}</div>
-    <br>
-    <div>{{ movie }}</div>
-    <div>{{ dateTime }}</div>
-    <div>Filmastaden Småstaden</div>
-    <div>Biljett typ: {{ ticketType }}</div>
-    <div>Totalpris: {{ price }}kr</div>
-    <br>
-    <div>
-      Biljetter hämtas ut mins 15 min innan filmen
-      startar, betalning sker på plats.
-    </div>
-    <div class="return-box">
-      <button>Återgå till filmvy</button>
+    <div v-if="order">
+      <div class="top-box"></div>
+      <h3>Tack för din bokning!</h3>
+      <div>Ditt bokningsnummer att att uppge i kassan: {{order[0].title }}</div>
+      <br>
+      <div>{{ order.movie }}</div>
+      <div>{{ order.dateTime }}</div>
+      <div>Filmastaden Småstaden</div>
+      <div>Biljett typ: {{ order.ticketType }}</div>
+      <div>Totalpris: {{ order.price }}kr</div>
+      <br>
+      <div>
+        Biljetter hämtas ut mins 15 min innan filmen
+        startar, betalning sker på plats.
+      </div>
+      <div class="return-box">
+        <button>Återgå till filmvy</button>
+      </div>
     </div>
   </div>
 </template>
 
 
 <script>
+var moment = require("moment");
+moment().format();
+
 export default {
-  name: "ConfirmOrder",
+  name: "order",
   data() {
     return {
-      booknr: "12345",
-      movie: "Aquaman",
-      dateTime: "24/1 22.30",
-      ticketType: "Vuxen",
-      price: "85"
+      order: false
     };
+  },
+  created() {
+    this.$axios.get("confirmOrder_db.php").then(response => {
+      this.order = response.data;
+    });
   }
 };
 </script>
