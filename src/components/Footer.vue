@@ -1,17 +1,16 @@
 <template>
   <nav class="footer navbar navbar-expand-lg navbar-bark">
-    <div class="footer-box container">
+    <div class="footer-box">
       <div class="links col-sm-auto">
         <a class="row" href="#">{{ link1 }}</a>
         <a class="row" href="#">{{ link2 }}</a>
         <a class="row" href="#">{{ link3 }}</a>
-        <a class="row" href="#">{{ link4 }}</a>
       </div>
       <div class="links col-sm-auto">
-        <a class="row" href="https://sv-se.facebook.com/" target="_blank">{{ link5 }}</a>
-        <a class="row" href="https://www.instagram.com/?hl=sv" target="_blank">{{ link6 }}</a>
+        <a class="row" href="https://sv-se.facebook.com/" target="_blank">{{ link4 }}</a>
+        <a class="row" href="https://www.instagram.com/?hl=sv" target="_blank">{{ link5 }}</a>
       </div>
-    </div>
+  </div>
   </nav>
 </template>
 
@@ -21,11 +20,10 @@ export default {
   data() {
     return {
       link1: "Kontakta kundservice",
-      link2: "GDPR",
-      link3: "Medlemsvilkor",
-      link4: "Medlemsförmåner",
-      link5: "Följ oss på Facebook",
-      link6: "Följ oss på Instragram"
+      link2: "Medlemsvilkor",
+      link3: "Medlemsförmåner",
+      link4: "Följ oss på Facebook",
+      link5: "Följ oss på Instragram"
     };
   }
 };
@@ -37,7 +35,7 @@ export default {
   color: white;
 }
 .footer-box {
-  margin: 1vh 1vh;
+  margin: auto;
   border-top: 4px solid #c2992a;
 }
 a {
