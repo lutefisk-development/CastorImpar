@@ -1,0 +1,55 @@
+[{
+  "id": 1,
+  "salong": "stora salongen",
+  "title": "Destroyer",
+  "datum": "2019-01-22",
+  "tid": "19:35"
+}, {
+  "id": 2,
+  "salong": "lilla salongen",
+  "title": "Mera monster, Alfons",
+  "datum": "2019-01-22",
+  "tid": "22:41"
+}, {
+  "id": 3,
+  "salong": "lilla salongen",
+  "title": "Call me by your name",
+  "datum": "2019-01-22",
+  "tid": "21:06"
+}, {
+  "id": 4,
+  "salong": "lilla salongen",
+  "title": "Call me by your name",
+  "datum": "2019-01-23",
+  "tid": "20:24"
+}, {
+  "id": 5,
+  "salong": "stora salongen",
+  "title": "Mera monster, Alfons",
+  "datum": "2019-01-23",
+  "tid": "18:43"
+}, {
+  "id": 6,
+  "salong": "stora salongen",
+  "title": "Destroyer",
+  "datum": "2019-01-23",
+  "tid": "21:13"
+}, {
+  "id": 7,
+  "salong": "lilla salongen",
+  "title": "Aquaman",
+  "datum": "2019-01-24",
+  "tid": "19:31"
+}, {
+  "id": 8,
+  "salong": "lilla salongen",
+  "title": "Destroyer",
+  "datum": "2019-01-24",
+  "tid": "21:31"
+}, {
+  "id": 9,
+  "salong": "lilla salongen",
+  "title": "Gräns",
+  "datum": "2019-01-24",
+  "tid": "21:06"
+}]
