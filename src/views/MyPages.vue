@@ -1,6 +1,5 @@
 <template>
   <div class="MyPages">
-    <MyPagesContent></MyPagesContent>
     <Footer></Footer>
   </div>
 </template>
@@ -15,7 +14,6 @@ import Footer from '@/components/Footer.vue'
 export default {
   name: 'MyPages',
   components: {
-    MyPagesContent,
     Footer
   }
 }
