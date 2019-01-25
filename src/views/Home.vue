@@ -1,7 +1,6 @@
 <template>
 	<div>
-<navbar> </navbar>
-  
+
     <MovieSelector></MovieSelector>
     <Movieholder></Movieholder>
     <upcomingMovies></upcomingMovies>
