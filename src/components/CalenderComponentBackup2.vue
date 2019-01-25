@@ -5,21 +5,13 @@
       Choose date
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" v-for="day in days" v-on:click="selectDate(day)"><div class='movie-title'>{{day.title}}</div>{{ day.date_time.format('llll') }}</a>
+      <a class="dropdown-item" v-for="day in days" v-on:click="selectDate(day)"><div class='movie-title'>{{day.title}}</div>{{ day.datum.format('ll') }}  {{day.tid}}</a>
       </div>
     </div>
   </div>
 </template>
 
 <style>
-
-.dropdown-menu{
-    max-height: 300px;
-    margin-bottom: 10px;
-    overflow:scroll;
-    -webkit-overflow-scrolling: touch;
-}
-
 .booking-option{
    margin-bottom: 2% !important;
 }
@@ -52,16 +44,16 @@ export default {
     }
   },
   created(){
-    this.$axios.get("schedule.php").then((response) => {
+    this.$axios.get("jsonmovies/visningar.json").then((response) => {
       let showings = response.data;
       let pickedDays = [];
       for(let showing of showings){
-        console.log(showing.date_time)
-        if(pickedDays.includes(showing.date_time)){
+        console.log(showing.tid)
+        if(pickedDays.includes(showing.datum)){
           continue;
         }
-        showing.date_time = moment(new Date(showing.date_time));
-        pickedDays.push(showing.date_time);
+        showing.datum = moment(new Date(showing.datum));
+        pickedDays.push(showing.datum);
         pickedDays.push(showing.tid);
         pickedDays.push(showing.title)
         //showing = moment()
@@ -72,7 +64,7 @@ export default {
   },
   methods:{
     selectDate(day){
-      console.log(day.date_time),
+      console.log(day.datum),
       console.log(day.tid)
     }
   }

@@ -4,6 +4,7 @@
       <RegMember></RegMember>
       <Footer></Footer>
    </div>
+
 </template>
 
 <script>
