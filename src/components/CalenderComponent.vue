@@ -35,12 +35,13 @@
 
 
 <script>
-
+import Router from "vue-router";
 
 var moment = require('moment');
 moment().format();
 
 var days =[1,2,3,4,5,6,7]
+var selectedShowing=[]
 
 export default {
   name: 'calendercomponent',
@@ -48,7 +49,8 @@ export default {
 
 
     return{
-      days:[]
+      days:[],
+      selectedShowing:[]
     }
   },
   created(){
@@ -56,7 +58,7 @@ export default {
       let showings = response.data;
       let pickedDays = [];
       for(let showing of showings){
-        console.log(showing.date_time)
+        //console.log(showing.date_time)
         if(pickedDays.includes(showing.date_time)){
           continue;
         }
@@ -67,14 +69,20 @@ export default {
         //showing = moment()
         this.days.push(showing);
       } 
-      console.log(this.days)
+      //console.log(this.days)
     })
   },
   methods:{
     selectDate(day){
-      this.$router.push('confirmorder')
-      console.log(day.date_time),
-      console.log(day.tid)
+      selectedShowing.push(day),
+      console.log(selectedShowing[0].id), //schema id
+//----------------------POST TO DB----------------------------//
+
+//-------------------------------------------------------------//
+      this.$router.push("confirmorder")
+      //console.log(day.date_time),
+      //console.log(day.tid),
+      //console.log(showing)
        this.$router.go({
         path: confirmorder
     })
