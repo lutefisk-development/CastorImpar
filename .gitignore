@@ -21,3 +21,5 @@ yarn-error.log*
 *.sw*
 backend/config\.php
 src/plugins/axios\.js
+
+backend/config\.php
