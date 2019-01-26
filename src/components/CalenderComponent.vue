@@ -72,8 +72,13 @@ export default {
   },
   methods:{
     selectDate(day){
+      this.$router.push('confirmorder')
       console.log(day.date_time),
       console.log(day.tid)
+       this.$router.go({
+        path: confirmorder
+    })
+
     }
   }
 //   data(){
