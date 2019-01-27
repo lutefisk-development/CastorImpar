@@ -16,7 +16,7 @@
             <h5>{{movie.title}}</h5>
             <br>
             <p v-html="movie.description"></p>
-            <br>
+         
             <div class="button-group">
               <button>Order now</button>
               <button data-toggle="modal" data-target="#ModalCenter">Read more</button>
@@ -45,6 +45,7 @@
   border-bottom: 3px solid black;
   border-top: 3px solid black;
   background-color: white;
+  font-size: 12px;
 }
 
 .button-group {
