@@ -2,25 +2,42 @@
   <div class="order">
     <div v-if="order">
       <div class="top-box"></div>
-      <h3>Tack för din bokning!</h3>
-      <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
-      <br>
-      <div>{{ order[bookingNr].title }}</div>
-      <div>{{ order[bookingNr].date_time }}</div>
-      <div>Filmastaden Småstaden</div>
-      <div>Biljett typ: {{ order[bookingNr].name }}</div>
-      <div>Totalpris: {{ order[bookingNr].price }}kr</div>
-      <br>
-      <div>
-        Biljetter hämtas ut mins 15 min innan filmen
-        startar, betalning sker på plats.
+      <div class="card text-center">
+        <div class="card-header">
+          <h4>Tack för din bokning!</h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>{{ order[bookingNr].title }}</h3>
+          </div>
+          <br>
+          <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
+          <br>
+          <div>{{ order[bookingNr].date_time }}</div>
+          <br>
+          <div>Filmastaden Småstaden</div>
+          <br>
+          <div>Biljett typ: {{ order[bookingNr].name }}</div>
+          <br>
+          <div>Totalpris: {{ order[bookingNr].price }}kr</div>
+          <br>
+          <div>
+            Biljetter hämtas ut mins 15 min innan filmen
+            startar, betalning sker på plats.
+          </div>
+        </div>
+        <div class="card-footer text-muted"></div>
       </div>
       <div class="return-box">
-        <button>Återgå till filmvy</button>
+        <form class="return-button" action="/">
+          <input type="submit" value="Återgå till filmvy">
+        </form>
       </div>
     </div>
   </div>
 </template>
+
+
 
 
 <script>
@@ -60,7 +77,7 @@ export default {
   height: 5vh;
   margin-bottom: 10vh;
 }
-button {
+.return-button {
   margin: 5px;
 }
 br {
