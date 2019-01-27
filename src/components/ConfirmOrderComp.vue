@@ -10,23 +10,18 @@
           <div>
             <h3>{{ order[bookingNr].title }}</h3>
           </div>
+          <div>{{ order[bookingNr].date_time }}</div>
           <br>
           <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
           <br>
-          <div>{{ order[bookingNr].date_time }}</div>
-          <br>
           <div>Filmastaden Småstaden</div>
-          <br>
           <div>Biljett typ: {{ order[bookingNr].name }}</div>
-          <br>
           <div>Totalpris: {{ order[bookingNr].price }}kr</div>
-          <br>
-          <div>
-            Biljetter hämtas ut mins 15 min innan filmen
-            startar, betalning sker på plats.
-          </div>
         </div>
-        <div class="card-footer text-muted"></div>
+        <div class="card-footer text-muted">
+          Biljetter hämtas ut mins 15 min innan filmen
+          startar, betalning sker på plats.
+        </div>
       </div>
       <div class="return-box">
         <form class="return-button" action="/">
