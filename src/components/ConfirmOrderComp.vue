@@ -3,13 +3,13 @@
     <div v-if="order">
       <div class="top-box"></div>
       <h3>Tack för din bokning!</h3>
-      <div>Ditt bokningsnummer att att uppge i kassan: {{order[0].title }}</div>
+      <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
       <br>
-      <div>{{ order.movie }}</div>
-      <div>{{ order.dateTime }}</div>
+      <div>{{ order[bookingNr].title }}</div>
+      <div>{{ order[bookingNr].date_time }}</div>
       <div>Filmastaden Småstaden</div>
-      <div>Biljett typ: {{ order.ticketType }}</div>
-      <div>Totalpris: {{ order.price }}kr</div>
+      <div>Biljett typ: {{ order[bookingNr].name }}</div>
+      <div>Totalpris: {{ order[bookingNr].price }}kr</div>
       <br>
       <div>
         Biljetter hämtas ut mins 15 min innan filmen
@@ -31,7 +31,8 @@ export default {
   name: "order",
   data() {
     return {
-      order: false
+      order: false,
+      bookingNr: 0
     };
   },
   created() {
@@ -45,6 +46,7 @@ export default {
 <style>
 .order {
   font-weight: bold;
+  background-color: white;
 }
 .return-box {
   background-color: #79924e;
