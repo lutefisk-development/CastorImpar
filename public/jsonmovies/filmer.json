@@ -1,0 +1,132 @@
+[
+   {
+      "title": "Call me by your name",
+      "productionYear": 2017,
+      "length": 132,
+      "genre": "Drama",
+      "distributor": "UIP",
+      "language": "engelska",
+      "subtitles": "svenska",
+      "director": "Luca Guadagnino",
+      "showdates":["January 27, 2019", "February 2, 2019", "February 9, 2019"],
+      "actors": [
+         "Armie Hammer",
+         "Timothée Chalamet",
+         "Michael Stuhlbarg"
+      ],
+      "description": "<p>Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p><p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.</p>",
+      "images": [
+         "call-me-poster1.jpg",
+         "call-me-poster2.jpg"
+      ],
+      "youtubeTrailers": [
+         "Z9AYPxH5NTM"
+      ]
+   },
+   {
+      "title": "Mera monster, Alfons",
+      "productionYear": 2014,
+      "length": 40,
+      "genre": "Barnfilm",
+      "distributor": "Folkets Bio",
+      "language": "Svenska",
+      "subtitles": " ",
+      "director": " ",
+      "showdates":["January 29, 2019", "February 2, 2019", "February 9, 2019"],
+      "actors": [
+         "Animerat",
+         "Berättarröst - Jonas Karlsson"
+      ],
+      "description": "<p>Tre historier om Alfons Åberg som bor med sin pappa och katten Pussel. Ibland är Alfons barnslig, som när han vägrar äta middag, men ibland är han stor, som när han är barnvakt åt Småtting.</p>",
+      "images": [
+         "alfons1.jpg",
+         "alfons2.jpg"
+      ],
+      "youtubeTrailers": [
+         "yxWia7I8G9c"
+      ]
+   },
+   {
+      "title": "Gräns",
+      "productionYear": 2018,
+      "length": 108,
+      "genre": "Thriller",
+      "distributor": "TriArt",
+      "language": "Svenska",
+      "subtitles": "Svenska",
+      "director": "Ali Abbassi",
+      "showdates":["January 25, 2019", "February 1, 2019", "February 10, 2019"],
+      "actors": [
+         "Eva Melander",
+         "Eero Milonoff",
+         "Viktor Åkerblom"
+      ],
+      "description": "<p>Handlingen i Gräns kretsar kring tullpolisen Tina, som har ett sjätte sinne när det gäller att peka ut smugglare. Det är nästan som om hon kan lukta sig till när någon försöker dölja något. Ryktet om hennes skicklighet sprider sig inom poliskåren och hon anlitas för att hitta bevis mot en liga med omfattande kriminell verksamhet. Men när den mystiske Vore kliver av färjan så tvekar hon för första gången på sina känslor.</p><p>Tina anar att Vore döljer något, men kan inte sätta fingret på vad. De attraheras av varandra, men när hon lär känna honom inser hon samtidigt att hela hennes liv är baserat på en enda stor lögn. Precis som Vore så hör Tina inte hemma i den här världen. Nu måste hon välja: fortsätta med sin livslögn eller omfamna den skrämmande sanningen om vem hon egentligen är.</p>",
+      "images": [
+         "grans1",
+         "grans2"
+      ],
+      "youtubeTrailers": [
+         "y6NljX3X3XQ"
+      ]
+   },
+   {
+      "title": "Destroyer",
+      "productionYear": 2018,
+      "length": 123,
+      "genre": "Action",
+      "distributor": "Scanbox",
+      "language": "Engelska",
+      "subtitles": "Svenska",
+      "director": "Karyn Kusama",
+      "showdates":["January 27, 2019", "February 2, 2019", "February 9, 2019"],
+      "actors": [
+         "Nicole Kidman",
+         "Toby Kebbell",
+         "Tatiana Maslany",
+         "Sebastian Stan",
+         "Scoot McNairy",
+         "Bradley Whitford",
+         "Toby Huss",
+         "James Jordan",
+         "Beau Knapp",
+         "Jade Pettyjohn"
+      ],
+      "description": "<p>LAPD-polisen Erin Bell har påbörjat en moralisk och existentiell resa för att göra upp med sitt mörka förflutna. Som rookie placerades hon undercover med ett kultliknande gäng i den kaliforniska öknen. Ett uppdrag med en tragisk utgång som starkt påverkat hennes liv. När ledaren av det gänget åter dyker upp flera år senare måste hon arbeta sig tillbaka genom de återstående medlemmarna, och sin egen historia med dem, för att äntligen kunna konfrontera de demoner som förföljt henne i alla år.</p>",
+      "images": [
+         "destroyer1.jpg",
+         "destroyer2.jpg"
+      ],
+      "youtubeTrailers": [
+         "cjoh3B1OPgU"
+      ]
+   },
+   {
+      "title": "Aquaman",
+      "productionYear": 2018,
+      "length": 143,
+      "genre": "Action",
+      "distributor": "Warner Bros",
+      "language": "Engelska",
+      "subtitles": "Svenska",
+      "director": "James Wan",
+      "showdates":["January 25, 2019", "February 5, 2019", "February 9, 2019"],
+      "actors": [
+         "Jason Momoa",
+         "Amber Heard",
+         "Willem Dafoe",
+         "Patrick Wilson",
+         "Dolf Lundgren",
+         "Yahya Abdul-Mateen II",
+         "Nicole Kidman"
+      ],
+      "description": "<p>Halvmänniskan och halvatlanten Arthur Curry gör sitt livs resa – en resa som inte bara tvingar honom att möta sitt sanna jag, utan också upptäcka om han är värdig det han föddes till: en kung. Från regissören James Wan kommer nu det actionspäckade och visuellt storslagna äventyret Aquaman med Jason Momoa i huvudrollen.</p>",
+      "images": [
+         "aqua-man1.jpg",
+         "aqua-man2.jpg"
+      ],
+      "youtubeTrailers": [
+         "WDkg3h8PCVU"
+      ]
+   }
+]
