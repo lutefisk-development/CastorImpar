@@ -6,7 +6,7 @@
       <div v-for="(movie, i) in movies" v-bind:key="movie.id" class="carousel-item " v-bind:class="{ active: i==1 }">
         <img
       class="d-block w-100"
-     :src="getImgUrl(movies[0].images)"
+     :src="getImgUrl(movies[i].images)"
       style="height: 65vh;"
       
     >
@@ -15,7 +15,7 @@
             <br>
             <h5>{{movie.title}}</h5>
             <br>
-            <p>{{movie.description}}</p>
+            <p v-html="movie.description"></p>
             <br>
             <div class="button-group">
               <button>Order now</button>
@@ -130,7 +130,7 @@
 </style>
 
 <script>
-import picture1 from "@/assets/movieposter1.jpg";
+
 
 export default {
   name: "Movieholder",
@@ -146,7 +146,7 @@ export default {
   },
   methods: {
     getImgUrl(pic) {
-      return require("../assets/" + pic);
+      return require("../images/" + pic);
     }
   }
 };
