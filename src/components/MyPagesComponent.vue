@@ -4,16 +4,16 @@
     <div container-mypage>
               <div class="space mt-4"><br></div>
                <div class="profile col col-md-4 col-lg-4">
-                <section class="card profile mb-4 text-center">
+                <section class="card profile-kort mb-4 text-center">
                  <div class="card-mypage p-4">
-                   <div class="card-header my-page-head">
+                   <div class="card-header profile-head">
                     <h1>Mina sidor</h1>
                     <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Logga ut</a>
                     <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</a>
                   </div><!--end card header-->
                   <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
-                  <div class="card-footer my-page-foot">
-                    <p class="card-text foot-text pt-2">Förnamn Efternamn<br>Kundnummer: 000000</p>
+                  <div class="card-footer profile-foot">
+                    <p class="card-text profile-foot-text pt-2">Förnamn Efternamn<br>Kundnummer: 000000</p>
                   </div><!--end card footer-->
                  </div><!--end card-mypage-->
                 </section>
@@ -21,7 +21,7 @@
 
 
         <div class="bokningar col">
-          <section class="card booking mb-4 p-3">
+          <section class="card bokning-kort mb-4 p-3">
           <div class="rubrik"><h5>Bokningshistorik</h5></div>
        <table class="table bokning-tabell m-0">
         <tbody>
@@ -62,9 +62,9 @@
                 <div class="col-6 poang-text"><h5>Poäng:</h5></div>
                 <div class="col-6 poang-siffror"><h5>250</h5></div>
               </div>
-              <img class="card-img bonus img-fluid" :src="popcorn" alt="bonus">
+              <img class="card-img bonus-pic img-fluid" :src="popcorn" alt="bonus">
               <div class="card-footer poang-foot">
-                <p class="card-text bonus-text pt-2"><p><b>Du har just nu tjänat ihop till:</b><br>25% rabatt på Popcorn Large</p>
+                <p class="card-text rabatt-text pt-2"><p><b>Du har just nu tjänat ihop till:</b><br>25% rabatt på Popcorn Large</p>
               </div>
                             <table class="table poang-tabell m-0">
         <tbody>
@@ -129,13 +129,17 @@
     margin-bottom: 0px;
 }
 
+.bokning-tabell{
+  font-size: 0.9em;
+}
+
 .rubrik h5{
     margin-bottom: 0px;
     text-align: left;
     padding-bottom: 10px;
 }
 
-.bonus{
+.bonus-pic{
   width:250px;
   padding: 25px;
 }
