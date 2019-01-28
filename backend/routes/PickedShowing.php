@@ -4,13 +4,13 @@ include('../boot.php');
 include('../db-connection.php');
  
 // hämta från vue
-if($request['schedulebooking_input']){
+if($request['schemaID']){
  
   // lägg till databasen
-  $statement = $db->prepare("INSERT INTO bookings(schedulebooking_id) VALUES(:schedulebooking_input)");
+  $statement = $db->prepare("INSERT INTO bookings SET schedulebooking_id = :schedulebooking_id");
   try{
     $result = $statement->execute(array(
-        'schedulebooking_id' => $request['schedulebooking_input']
+        'schedulebooking_id' => $request['schemaID']
     ));
   }catch(PDOException $e) {
     $result = $e;
