@@ -6,14 +6,14 @@
                <div class="profile col-md-6 col-sm-8 mt-4">
                 <section class="card mb-4 text-center">
                  <div class="card-mypage p-4">
-                   <div class="card-header">
+                   <div class="card-header my-page-head">
                     <h1>Mina sidor</h1>
                     <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Logga ut</a>
                     <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</a>
                   </div><!--end card header-->
                   <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
-                  <div class="card-footer">
-                    <p class="card-text pt-2">Förnamn Efternamn<br>Kundnummer: 000000</p>
+                  <div class="card-footer my-page-foot">
+                    <p class="card-text foot-text pt-2">Förnamn Efternamn<br>Kundnummer: 000000</p>
                   </div><!--end card footer-->
                  </div><!--end card-mypage-->
                 </section>
@@ -21,8 +21,9 @@
 
 
         <div class="bokningar col-md-6 col-sm-8">
-          <div class="rubrik"><h5>Bokningar</h5></div>
-       <table class="table">
+          <section class="card booking mb-4 p-3">
+          <div class="rubrik"><h5>Bokningshistorik</h5></div>
+       <table class="table bokning-tabell">
         <tbody>
 
               <tr>
@@ -51,27 +52,25 @@
           </tr>
         </tbody>
       </table>
-
+          </section>
 </div>
 
- <div class="mina-poang col-md-6 col-sm-8">
-              <div class="poang row mx-0 my-4 pt-4 px-2">
-                <p class="col-6 d-flex justify-content-start">Poäng</p>
-                <p class="col-6 d-flex justify-content-end">00000</p>
+    <div class="poang-mypage col-md-6 col-sm-8 mt-4">
+          <section class="poang-kort card mb-4 text-center">
+            <div class="card-poang p-4">
+              <div class="card-header poang-head row">
+                <div class="col-6 poang-text>"><h5>Poäng:</h5></div>
+                <div class="col-6 poang-siffror"><h5>00000</h5></div>
               </div>
+              <img class="card-img bonus img-fluid" :src="popcorn" alt="bonus">
+              <div class="card-footer poang-foot">
+                <p class="card-text bonus-text pt-2"><p><b>Du har just nu tjänat ihop till:</b><br>25% rabatt på Popcorn Large</p>
+              </div>
+            </div><!--end card-mypage-->
+          </section>
         </div>
 
-  <div class="poang-info col-md-6 col-sm-8">
-          <div class="row rabatt mx-0">
-            <div class="col rabatt-text p-2">
-              <h4>Du har just nu tjänat ihop till:</h4>
-              <p>25% rabatt på Popcorn Large</p>
-            </div>
-            <div class="col popcorn p-2">
-               <img class="popcorn-img img-fluid" :src="popcorn" alt="popcorn">
-            </div>
-          </div>
-  </div> 
+
 
        
             
@@ -87,28 +86,25 @@
 	background-color: #d3ac44;
 }
 
-.poang, .table {
+.table {
     background-color: white;
 }
 
 .rubrik {
     background-color: white;
     padding: 10px;
-
-}
-
-.rubrik h5{
-    text-align: left;
     margin-bottom: 0px;
 }
 
-.rabatt{
-	background-color: white;
+.rubrik h5{
+    padding: 10px;
+    margin-bottom: 0px;
+    text-align: left;
 }
 
-.rabatt-text p, h4{
-	padding: 10px;
-	text-align: center;
+.bonus{
+  width:250px;
+  padding: 25px;
 }
 
 </style>
