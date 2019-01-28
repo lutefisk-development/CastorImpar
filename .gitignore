@@ -20,3 +20,6 @@ yarn-error.log*
 *.sln
 *.sw*
 backend/config\.php
+src/plugins/axios\.js
+
+backend/config\.php
