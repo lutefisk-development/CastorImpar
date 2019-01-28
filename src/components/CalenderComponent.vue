@@ -85,18 +85,19 @@ this.$axios.post('PickedShowing.php', {
   schemaID: this.schedulebooking_input
 }).then((response) => {
           console.log('skickat in film till php', response);
+          this.$router.push("confirmorder")
 });
 //-------------------------------------------------------------//
-      this.$router.push("confirmorder")
+      
       //console.log(day.date_time),
       //console.log(day.tid),
       //console.log(showing)
-       this.$router.go({
-        path: confirmorder
-    })
-
+       //this.$router.go({
+        //path: "confirmorder"
     }
+
   }
+  
 //   data(){
 
 // var today = moment(new Date())
