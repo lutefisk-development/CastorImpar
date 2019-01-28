@@ -59,7 +59,6 @@ export default {
       let showings = response.data;
       let pickedDays = [];
       for(let showing of showings){
-        //console.log(showing.date_time)
         if(pickedDays.includes(showing.date_time)){
           continue;
         }
@@ -67,16 +66,14 @@ export default {
         pickedDays.push(showing.date_time);
         pickedDays.push(showing.tid);
         pickedDays.push(showing.title)
-        //showing = moment()
         this.days.push(showing);
       } 
-      //console.log(this.days)
     })
   },
+
   methods:{
     selectDate(day){
       selectedShowing.push(day),
-      //console.log(selectedShowing[0].id), //schema id
       this.schedulebooking_input = selectedShowing[0].id
       this.schedulebooking_input = parseInt(this.schedulebooking_input, 10)
       console.log(this.schedulebooking_input)
@@ -88,27 +85,8 @@ this.$axios.post('PickedShowing.php', {
           this.$router.push("confirmorder")
 });
 //-------------------------------------------------------------//
-      
-      //console.log(day.date_time),
-      //console.log(day.tid),
-      //console.log(showing)
-       //this.$router.go({
-        //path: "confirmorder"
     }
 
-  }
-  
-//   data(){
-
-// var today = moment(new Date())
-// today.subtract(1, 'd')
-// var todayRouting = today.toString();
-//    return{
-//       today,
-//       days,
-//       todayRouting
-//    }
-//   }
-
+  }    
 }
 </script>
