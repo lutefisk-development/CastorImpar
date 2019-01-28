@@ -1,4 +1,4 @@
-<template>
+   <template>
    <div class="start">
       <div>
          <input class="form-check-inline" type="checkbox" v-for="item in items1" @click="pickedSeats" :key="item.id" :value="item.value"
