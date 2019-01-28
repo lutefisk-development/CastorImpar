@@ -143,8 +143,8 @@ export default {
   name: "Movieholder",
   data() {
     return {
-      title: '',
-      description: '',
+      title: "",
+      description: "",
       movies: []
     };
   },
