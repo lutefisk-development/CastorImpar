@@ -18,7 +18,7 @@
             <p v-html="movie.description"></p>
          
             <div class="button-group">
-              <button>Order now</button>
+             
               <button data-toggle="modal" data-target="#ModalCenter">Read more</button>
              
             </div>
@@ -26,6 +26,11 @@
         </div>
       </div>
     </div>
+
+
+
+
+    
   </div>
 </template>
 
@@ -46,6 +51,7 @@
   border-top: 3px solid black;
   background-color: white;
   font-size: 12px;
+  line-height: 12px;
 }
 
 .button-group {
@@ -137,6 +143,8 @@ export default {
   name: "Movieholder",
   data() {
     return {
+      title: '',
+      description: '',
       movies: []
     };
   },
