@@ -6,6 +6,7 @@
       <StoraSalen></StoraSalen>
       <Footer></Footer>
    </div>
+
 </template>
 
 <script>
