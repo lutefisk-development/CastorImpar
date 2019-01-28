@@ -1,7 +1,7 @@
 <?php
 //header('Access-Control-Allow-Origin: *'); 
 include('../boot.php');
-include('../db-connection.php');
+//include('../db-connection.php');
  
 // hämta från vue
 if($request['schemaID']){
