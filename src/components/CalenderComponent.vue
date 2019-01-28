@@ -2,7 +2,7 @@
   <div class="mainframe">
    <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Choose date
+      SHOWINGS
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" v-for="day in days" v-on:click="selectDate(day)"><div class='movie-title'>{{day.title}}</div>{{ day.date_time.format('llll') }}</a>
@@ -42,7 +42,7 @@ moment().format();
 
 var days =[1,2,3,4,5,6,7]
 var selectedShowing=[]
-
+let schedulebooking_input
 export default {
   name: 'calendercomponent',
   data(){
@@ -75,9 +75,13 @@ export default {
   methods:{
     selectDate(day){
       selectedShowing.push(day),
-      console.log(selectedShowing[0].id), //schema id
+      //console.log(selectedShowing[0].id), //schema id
+      schedulebooking_input = selectedShowing[0].id
+      console.log(schedulebooking_input)
 //----------------------POST TO DB----------------------------//
-
+this.$axios.post('PickedShowing.php', this.schedulebooking_input).then((response) => {
+          console.log('skickat in film till php', response);
+});
 //-------------------------------------------------------------//
       this.$router.push("confirmorder")
       //console.log(day.date_time),
