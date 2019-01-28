@@ -2,9 +2,9 @@
 
  <div class="MyPages">
     <div container-mypage>
-
-               <div class="profile col-md-6 col-sm-8 mt-4">
-                <section class="card mb-4 text-center">
+              <div class="space mt-4"><br></div>
+               <div class="profile col-md-6 col-sm-8">
+                <section class="card profile mb-4 text-center">
                  <div class="card-mypage p-4">
                    <div class="card-header my-page-head">
                     <h1>Mina sidor</h1>
@@ -58,8 +58,8 @@
     <div class="poang-mypage col-md-6 col-sm-8 mt-4">
           <section class="poang-kort card mb-4 text-center">
             <div class="card-poang p-4">
-              <div class="card-header poang-head row">
-                <div class="col-6 poang-text>"><h5>Poäng:</h5></div>
+              <div class="card-header poang-head row m-0">
+                <div class="col-6 poang-text"><h5>Poäng:</h5></div>
                 <div class="col-6 poang-siffror"><h5>00000</h5></div>
               </div>
               <img class="card-img bonus img-fluid" :src="popcorn" alt="bonus">
@@ -86,26 +86,35 @@
 	background-color: #d3ac44;
 }
 
+
 .table {
     background-color: white;
 }
 
 .rubrik {
     background-color: white;
-    padding: 10px;
     margin-bottom: 0px;
 }
 
 .rubrik h5{
-    padding: 10px;
     margin-bottom: 0px;
     text-align: left;
+    padding-bottom: 10px;
 }
 
 .bonus{
   width:250px;
   padding: 25px;
 }
+
+.poang-text{
+text-align: left;
+}
+
+.poang-siffror{
+	text-align: right;
+}
+
 
 </style>
 
