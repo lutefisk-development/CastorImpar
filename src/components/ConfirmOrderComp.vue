@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       order: false,
-      bookingNr: 55
+      bookingNr: 0
     };
   },
   created() {
