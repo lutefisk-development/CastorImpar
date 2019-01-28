@@ -11,6 +11,7 @@
             <h3>{{ order[bookingNr].title }}</h3>
           </div>
           <div>{{ order[bookingNr].date_time }}</div>
+          <div>{{ order[bookingNr].seat }}</div>
           <br>
           <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
           <br>
