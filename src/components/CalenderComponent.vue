@@ -42,7 +42,6 @@ moment().format();
 
 var days =[1,2,3,4,5,6,7]
 var selectedShowing=[]
-let schedulebooking_input
 export default {
   name: 'calendercomponent',
   data(){
@@ -50,7 +49,9 @@ export default {
 
     return{
       days:[],
-      selectedShowing:[]
+      selectedShowing:[],
+      schedulebooking_input: '',
+      schemaID: ''
     }
   },
   created(){
@@ -76,10 +77,13 @@ export default {
     selectDate(day){
       selectedShowing.push(day),
       //console.log(selectedShowing[0].id), //schema id
-      schedulebooking_input = selectedShowing[0].id
-      console.log(schedulebooking_input)
+      this.schedulebooking_input = selectedShowing[0].id
+      this.schedulebooking_input = parseInt(this.schedulebooking_input, 10)
+      console.log(this.schedulebooking_input)
 //----------------------POST TO DB----------------------------//
-this.$axios.post('PickedShowing.php', this.schedulebooking_input).then((response) => {
+this.$axios.post('PickedShowing.php', {
+  schemaID: this.schedulebooking_input
+}).then((response) => {
           console.log('skickat in film till php', response);
 });
 //-------------------------------------------------------------//
