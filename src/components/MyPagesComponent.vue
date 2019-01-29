@@ -13,7 +13,7 @@
                   </div><!--end card header-->
                   <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
                   <div class="card-footer profile-foot">
-                    <p class="card-text profile-foot-text pt-2">Förnamn Efternamn<br>Kundnummer: 000000</p>
+                    <p class="card-text profile-foot-text pt-2">{{ firstName }} {{lastName}}<br>Kundnummer: {{kundnummer}}</p>
                   </div><!--end card footer-->
                  </div><!--end card-mypage-->
                 </section>
@@ -23,35 +23,8 @@
         <div class="bokningar col">
           <section class="card bokning-kort mb-4 p-3">
           <div class="rubrik"><h5>Bokningshistorik</h5></div>
-       <table class="table bokning-tabell m-0">
-        <tbody>
 
-              <tr>
-              <td><b>24/1</b></td>
-              <td><b>Aquaman</b></td>
-              <td><b>22.30 Salong 2</b></td>
-              <td><b>85kr</b></td>
-            </tr>
-            <tr>
-              <td>12/12</td>
-              <td>Grindewalds Brott</td>
-              <td>18.15 Salong 2</td>
-              <td>85kr</td>
-          </tr>
-          <tr>
-              <td>11/10</td>
-              <td>Lord of the rings</td>
-              <td>19.30 Salong 1</td>
-              <td>85kr</td>
-          </tr>
-          <tr>
-              <td>6/4</td>
-              <td>King Kong</td>
-              <td>21.15 Salong 2</td>
-              <td>85kr</td>
-          </tr>
-        </tbody>
-      </table>
+  <p v-for="(titel, biodatum) in personsbookings" :key='bokningsid'><span>{{titel}} {{biodatum}}</span></p>
           </section>
 </div>
 
@@ -60,7 +33,7 @@
             <div class="card-poang p-4">
               <div class="card-header poang-head row m-0">
                 <div class="col-6 poang-text"><h5>Poäng:</h5></div>
-                <div class="col-6 poang-siffror"><h5>250</h5></div>
+                <div class="col-6 poang-siffror"><h5>{{poang}}</h5></div>
               </div>
               <img class="card-img bonus-pic img-fluid" :src="popcorn" alt="bonus">
               <div class="card-footer poang-foot">
@@ -172,8 +145,44 @@ export default {
     data() {
       return{
         profilbild: profilbild,
-        popcorn: popcorn
+        popcorn: popcorn,
+        person: [],
+        personsbookings: [],
+        firstName: '',
+        lastName: '',
+        kundnummer: '',
+        poang: '',
+        titel: '',
+        biodatum: '',
+        bokningsid: ''
+
       }
-    }
+    },
+created(){
+  this.$axios.get("mypage.php").then((response) => {
+    this.person = response.data;
+    this.firstName = this.person[0].firstname;
+    this.lastName = this.person[0].lastname;
+    this.kundnummer = this.person[0].id;
+    this.poang = this.person[0].points;
+  });
+
+  this.$axios.get("bookinghistory.php").then((response) => {
+    this.personsbookings = response.data;
+    this.titel = this.personsbookings.title;
+    this.biodatum = this.personsbookings.date_time;
+    this.bokningsid = this.personsbookings.booking.user_id;
+    })
+  },
+methods:{
+
 }
+}
+
+
+
+
+ 
+
+
 </script>
