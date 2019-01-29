@@ -7,8 +7,8 @@
             <div class="card-mypage p-4">
               <div class="card-header">
                  <h1>Mina sidor</h1>
-                <router-link "Home" class="btn btn-outline-secondary btn-sm mx-1" v-on:click="logout()" :disabled="loading" role="button" aria-pressed="true">Logga ut</router-link>
-                <a href="Home" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Till startsidan</a>
+                <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1" v-on:click="logout()" :disabled="loading" role="button" value="button" aria-pressed="true">Logga ut</router-link>
+                <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1"  role="button" value="button" aria-pressed="true">Till startsida</router-link>
               </div>
               <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
               <div class="card-footer">
@@ -17,6 +17,8 @@
             </div>
           </section>
         </div>
+
+        <!-- <a href="Home" class="btn btn-outline-secondary btn-sm mx-1" v-on:click="logout()" :disabled="loading" role="button" aria-pressed="true">Logga ut</a> -->
 
 </div>
 
