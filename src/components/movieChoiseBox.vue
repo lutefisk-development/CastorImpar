@@ -18,6 +18,7 @@ background-color: #F5F7E1;
 height: 10vh;
 border-top: 3px solid black;
 border-bottom: 3px solid black;
+margin-top: 5vh;
 }
 
 button {
