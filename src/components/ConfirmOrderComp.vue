@@ -50,7 +50,7 @@ export default {
   },
   created() {
     this.$axios.get("confirmOrder_db.php").then(response => {
-      this.order = response.data;
+      this.order = response.data.reverse();
     });
   }
 };
