@@ -1,11 +1,11 @@
 <?php
+  require_once('config.php');
 // Anslut till databas
 // PDO kräver felhantering med try-catch vid anslutning.
 try{
 
   // anslut
-  $db = new PDO('mysql:host=127.0.0.1;dbname=castorimpar', 'root', 'mysql');
-
+  $db = new PDO('mysql:host='. $mysql_host .';dbname='. $mysql_database, $mysql_user, $mysql_pass);
   // set errormode (här kan vi välja annan felhantering om vi vill)
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // PDO::ERRMODE_WARNING
 
