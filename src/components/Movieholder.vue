@@ -1,7 +1,7 @@
 <template>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
    
-    
+  
       <div class="carousel-inner">
       <div v-for="(movie, i) in movies" v-bind:key="movie.id" class="carousel-item " v-bind:class="{ active: i==1 }">
         <img
@@ -19,7 +19,9 @@
          
             <div class="button-group">
              
-              <button data-toggle="modal" data-target="#ModalCenter">Read more</button>
+              <button  @click="showModal = true">Read more</button>
+               <modal v-if="showModal" @close="showModal = false" v-bind:movie="movie"></modal>
+    
              
             </div>
           </div>
@@ -138,14 +140,18 @@
 
 <script>
 
+import modal from '@/components/KarusellModal.vue'
 
 export default {
+  components: {modal},
   name: "Movieholder",
   data() {
     return {
       title: "",
       description: "",
-      movies: []
+      movies: [],
+      showModal: false
+     
     };
   },
   created() {
@@ -156,6 +162,9 @@ export default {
   methods: {
     getImgUrl(pic) {
       return require("../images/" + pic);
+    },
+    openModal(movie) {
+      this.showModal = true;
     }
   }
 };
