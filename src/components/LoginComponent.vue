@@ -31,6 +31,11 @@
 
 <style>
 
+  .login {
+    background-color: #F5F7E1;
+    height:10vh;
+  }
+
    input[type="text"], input[type="password"] ,textarea {
       outline: none;
       box-shadow:none !important;
