@@ -14,13 +14,13 @@
                <div class="modal-body">
                   <h6>Logga in</h6>
                   <div class="input-group flex-nowrap">
-                     <input type="text" class="form-control login-form" placeholder="Mailadress" aria-label="Mailadress" aria-describedby="addon-wrapping">
+                     <input type="text" v-model="email" class="form-control login-form" placeholder="Mailadress" aria-label="Mailadress" aria-describedby="addon-wrapping">
                   </div>
                   <div class="input-group flex-nowrap">
-                     <input type="password" class="form-control login-form" placeholder="Lösenord" aria-label="Lösenord" aria-describedby="addon-wrapping">
+                     <input type="password" v-model="password" class="form-control login-form" placeholder="Lösenord" aria-label="Lösenord" aria-describedby="addon-wrapping">
                   </div>
                   <p class="login-form login-lower glömt">Jag har glömt mitt lösenord</p>
-                  <router-link to="/MyPages" tag="button" data-dismiss="modal" class="btn btn-primary login-form login-button">LOGGA IN</router-link>
+                  <button tag="button" data-dismiss="modal" class="btn btn-primary login-form login-button" v-on:click = "submit()" >LOGGA IN</button>
                </div>
                <div class="modal-footer login-footer"></div>
             </div>
@@ -75,7 +75,7 @@
    .h5-login {
       font-size: 14px;
    }
-   
+
    .p-login {
       font-size: 14px;
    }
@@ -88,9 +88,76 @@
 </style>
 
 <script>
-export default {
-  name: "Login"
+ export default{
+  name: 'Login',
+  data() {
+    return {
+      email: '',
+      password: '',
+      message: '',
+      loading: false,
+      showingLogin: false,
+      user: {}
+    };
+  },
+  created(){
+    this.$axios.get('logIn.php').then(response => {
+      this.user = response.data;
+    }).catch(e => {
+      // not logged in
+    });
+  },
+  methods: {
+    showLogin() {
+      this.showingLogin = true;
+    },
+    cancelLogin(e){
+      e.preventDefault();
+      this.showingLogin = false;
+    },
+    submit() { // login
+      this.loading = true;
+      this.message = '';
+      this.$axios.post('logIn.php', {
+        email: this.email,
+        password: this.password,
+      }).then(response => {
+        console.log(response);
+        this.loading = false;
+        this.showingLogin = false;
+        if(response.data.loggedIn) {
+          this.user = response.data.user;
+          this.$router.push('MyPages');
+        } else {
+          this.message = 'Incorrect email/password';
+        }
+      }).catch(error => {
+        this.message = 'Login error';
+        console.log('login error', error);
+        this.loading = false;
+      });
+    },
+    logout() {
+      this.loading = true;
+      this.$axios.post('logout.php').then(response => {
+        this.loading = false;
+        this.user = {};
+      }).catch(error => {
+        console.log('logout error', error);
+        this.loading = false;
+      });
+    }
+  },
+  watch: {
+    email() {
+      this.message = '';
+    },
+    password() {
+      this.message = '';
+    }
+  }
+}
 
-};
+
+
 </script>
-

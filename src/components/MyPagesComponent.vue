@@ -7,8 +7,8 @@
             <div class="card-mypage p-4">
               <div class="card-header">
                  <h1>Mina sidor</h1>
-                <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Logga ut</a>
-                <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</a>
+                <a href="Home" class="btn btn-outline-secondary btn-sm mx-1" v-on:click="logout()" :disabled="loading" role="button" aria-pressed="true">Logga ut</a>
+                <a href="Home" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Till startsidan</a>
               </div>
               <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
               <div class="card-footer">
@@ -17,11 +17,6 @@
             </div>
           </section>
         </div>
-
-   
-
-       
-            
 
 </div>
 
@@ -57,6 +52,26 @@ export default {
       return{
         profilbild: profilbild
       }
+    },
+    created(){
+    this.$axios.get('logout.php').then(response => {
+      this.user = response.data;
+    }).catch(e => {
+      // not logged in
+    });
+  },
+  methods: {
+    logout() {
+      this.loading = true;
+      this.$axios.post('logout.php').then(response => {
+        this.loading = false;
+        this.user = {};
+      }).catch(error => {
+        console.log('logout error', error);
+        this.loading = false;
+        this.$router.push('/');
+      });
     }
+   }
 }
 </script>
