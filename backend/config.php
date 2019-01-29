@@ -2,4 +2,4 @@
 
   $mysql_host = "localhost";
   $mysql_user = "root";
-  $mysql_pass = "root";
+  $mysql_pass = "mysql";
