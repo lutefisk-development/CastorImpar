@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       order: false,
-      ord: 0
+      ord: false
     };
   },
   created() {
