@@ -2,7 +2,7 @@
    <div>
       
       <Login></Login>
-      <RegMember></RegMember>
+      <register></register>
       <LillaSalen></LillaSalen>
       <StoraSalen></StoraSalen>
       <Footer></Footer>
@@ -20,7 +20,7 @@ export default {
    name: 'Test',
    components: {
       Login,
-      RegMember,
+      register,
       Footer,
       LillaSalen,
       StoraSalen
