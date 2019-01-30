@@ -1,24 +1,46 @@
+
 <?php
 include('../boot.php');
+
+/*
+    Om array-nyckel email och array-nyckel password finns går vi vidare
+*/
+if ( $request['email'] && $request['password'] )
+{
  
-// vi skapar bara en ny användare om det verkligen har skickats en.
-if($request['email'] && $request['password']){
+  /*
+      Ersätt array-värdet password med en hashad version
+  */
+  $request['password'] = password_hash( $request['password'], PASSWORD_DEFAULT );
  
-  // encrypt user password
-  $request['password'] = password_hash($request['password'], PASSWORD_DEFAULT);
- 
-  // create a user
-  $statement = $db->prepare("INSERT INTO members SET firstname = :firstname, lastname = :lastname, email = :email, password = :password, phone = :phone");
+  /*
+      Bygg upp PDO statement
+  */
+  $statement = $db->prepare( 
+    " INSERT INTO members 
+      SET firstname = :firstname, 
+          lastname = :lastname, 
+          email = :email, 
+          password = :password, 
+          phone = :phone"
+  );
+
+
   try{
-    $result = $statement->execute(array(
-        'firstname' => $request['firstname'],
-        'lastname' => $request['lastname'],
-        'email' => $request['email'],
-        'phone' => $request['phone'],
-        'password' => $request['password']
-    ));
+    $result = $statement->execute(
+      array(
+        'firstname' =>  $request['firstname'],
+        'lastname'  =>  $request['lastname'],
+        'email'     =>  $request['email'],
+        'password'  =>  $request['password'],
+        'phone'     =>  $request['phone']
+      )
+    );
   }catch(PDOException $e) {
     $result = $e;
   }
  
 }
+ 
+// skicka svar till klienten
+echo( json_encode($result) );
