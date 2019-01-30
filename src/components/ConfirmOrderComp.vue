@@ -11,7 +11,7 @@
             <h3>{{ order[0].title }}</h3>
           </div>
           <div>{{ order[0].date_time }}</div>
-          <div>Salong: {{ order[0].salon_id }}</div>
+          <div>Salong: {{ order[0].salon_name }}</div>
           <div>Rad: {{ order[0].rownumber }} Plats: {{ order[0].seatnumber }}</div>
           <br>
           <div>Ditt bokningsnummer att att uppge i kassan: {{order[0].id }}</div>
