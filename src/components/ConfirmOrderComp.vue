@@ -21,7 +21,7 @@
             <hr>
             {{ ord.name }} {{ ord.price }}kr
             <br>
-            Rad: {{ ord.rownumber }} Plats: {{ ord.seatnumber }}
+            Rad: {{ ord.row_nr }} Plats: {{ ord.seatnumber }}
             <br>
             <br>
           </div>
