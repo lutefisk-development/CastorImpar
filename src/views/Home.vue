@@ -1,8 +1,8 @@
 <template>
-	<div>
-<navbar> </navbar>
+  <div>
+    <navbar></navbar>
 
-    <calendercomponent></calendercomponent>
+    <MovieSelector></MovieSelector>
     <Movieholder></Movieholder>
     <upcomingMovies></upcomingMovies>
 
@@ -16,17 +16,18 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
-import calendercomponent from "@/components/CalenderComponent.vue";
+import MovieSelector from "@/components/movieChoiseBox.vue";
 import Movieholder from "@/components/Movieholder.vue";
+import upcomingMovies from "@/components/upcomingMovies.vue";
 
 export default {
   name: "home",
   components: {
-     calendercomponent,
-     Movieholder,
-     HelloWorld,
-    Footer,
-
+    MovieSelector,
+    Movieholder,
+    upcomingMovies,
+    HelloWorld,
+    Footer
   }
 };
 </script>
