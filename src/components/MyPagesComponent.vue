@@ -23,8 +23,11 @@
         <div class="bokningar col">
           <section class="card bokning-kort mb-4 p-3">
           <div class="rubrik"><h5>Bokningshistorik</h5></div>
-
-  <p v-for="(titel, biodatum) in personsbookings" :key='bokningsid'><span>{{titel}} {{biodatum}}</span></p>
+          <div v-for="title, date_time in personsbookings" :key="personsbookings.id">
+            <p>{{ titel }}</p>
+            <p>{{ biodatum }}</p>
+          </div>
+  
           </section>
 </div>
 
@@ -152,8 +155,8 @@ export default {
         lastName: '',
         kundnummer: '',
         poang: '',
-        titel: '',
-        biodatum: '',
+        titel: [],
+        biodatum: [],
         bokningsid: ''
 
       }
@@ -169,9 +172,28 @@ created(){
 
   this.$axios.get("bookinghistory.php").then((response) => {
     this.personsbookings = response.data;
-    this.titel = this.personsbookings.title;
-    this.biodatum = this.personsbookings.date_time;
-    this.bokningsid = this.personsbookings.booking.user_id;
+
+    for (let i = 0; i < this.personsbookings.length; i++) {
+      this.titel = this.personsbookings[i].title;
+      console.log(this.titel);
+    }
+
+    for (let i = 0; i < this.personsbookings.length; i++) {
+      this.biodatum = this.personsbookings[i].date_time;
+      console.log(this.biodatum);
+    }
+
+
+
+
+
+
+    // this.titel = this.personsbookings.title;
+    // this.biodatum = this.personsbookings.date_time;
+    // console.log(this.titel);
+    // console.log(this.biodatum);
+
+    //this.bokningsid = this.personsbookings.booking.user_id;
     })
   },
 methods:{
