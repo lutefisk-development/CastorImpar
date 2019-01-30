@@ -152,9 +152,6 @@ CALCULATE      </button>
    </div>
 </div>
 </template>
-
-
-
 <style>
   #ordercomponentbox {
       background-color: red;
@@ -170,20 +167,13 @@ button {
    padding-bottom: 50px;
 }
 </style>
-
-
-
 <script>
   var AdultQty=0;
   var BarnQty = 0;
   var PensionärQty = 0;
   var prices=[1,2]; 
   var totalPrice=0;
-
-
 export default {
-
-
  name: 'ordercomponentbox',
  data() {
    return{
@@ -192,20 +182,22 @@ export default {
     BarnQty : 0,
     totalPrice : 0,
     PensionärQty : 0,
-   };
+   }
  },
- created(){
-     this.axios.get(order.php).then(response => {
+ created: function() {
+   this.fetchItems();
+ },
+ methods: {
+   fetchItems() {
+     let uri= "order.php";
+     this.axios.get(uri).then((response) => {
        prices = response.data;
        console.log(prices);
-   		})
+     })
    },
-  
-   
- methods: {
   calculatePrice() {
     this.totalPrice = 0;
-    let uri = "order.php";
+    let uri= "order.php";
      this.axios.get(uri).then((response) => {
        prices = response.data;
        for(let price of prices) {
@@ -245,8 +237,14 @@ export default {
        console.log(prices);
      })
    },
-
+   // katt() {
+   //   let uri= 'http://localhost/castorimpar/backend/routes/order.php';
+   //   this.axios.get(uri).then((response) => {
+   //  for(let price of prices) {
+   //          alert(prices)
+   //  }
+   //   })
+   // }
  }
-
 }
 </script>
