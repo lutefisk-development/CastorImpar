@@ -11,7 +11,7 @@ AND prices.price = booked_seats.price_id
 AND bookings.schedulebooking_id = schedule.id 
 AND bookings.id = booked_seats.bookings_id
 AND salons.id = schedule.salon_id
-ORDER BY booked_seats.id ASC");
+ORDER BY bookings.id ASC");
 $statement->execute();
 $response = $statement->fetchAll(PDO::FETCH_ASSOC);
 
