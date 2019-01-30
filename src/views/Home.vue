@@ -18,14 +18,12 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
 import calendercomponent from "@/components/movieChoiseBox.vue";
 import Movieholder from "@/components/Movieholder.vue";
-import upcomingMovies from "@/components/upcomingMovies.vue";
 
 export default {
   name: "home",
   components: {
      calendercomponent,
      Movieholder,
-     upcomingMovies,
      HelloWorld,
     Footer,
 

@@ -19,7 +19,6 @@
                 </section>
               </div><!--end profile-->
 
-
         <div class="bokningar col-md-6 col-sm-8">
           <section class="card booking mb-4 p-3">
           <div class="rubrik"><h5>Bokningshistorik</h5></div>
@@ -61,6 +60,13 @@
               <div class="card-header poang-head row m-0">
                 <div class="col-6 poang-text"><h5>Poäng:</h5></div>
                 <div class="col-6 poang-siffror"><h5>00000</h5></div>
+               <div class="col-md-6 col-sm-8 mt-4">
+          <section class="card mb-4 text-center">
+            <div class="card-mypage p-4">
+              <div class="card-header">
+                 <h1>Mina sidor</h1>
+                <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1" v-on:click="logout()" :disabled="loading" role="button" value="button" aria-pressed="true">Logga ut</router-link>
+                <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1"  role="button" value="button" aria-pressed="true">Till startsida</router-link>
               </div>
               <img class="card-img bonus img-fluid" :src="popcorn" alt="bonus">
               <div class="card-footer poang-foot">
@@ -71,9 +77,6 @@
         </div>
 
 
-
-       
-            
 
   </div>
  </div>
@@ -128,6 +131,26 @@ export default {
         profilbild: profilbild,
         popcorn: popcorn
       }
+    },
+    created(){
+    this.$axios.get('logout.php').then(response => {
+      this.user = response.data;
+    }).catch(e => {
+      // not logged in
+    });
+  },
+  methods: {
+    logout() {
+      this.loading = true;
+      this.$axios.post('logout.php').then(response => {
+        this.loading = false;
+        this.user = {};
+      }).catch(error => {
+        console.log('logout error', error);
+        this.loading = false;
+        this.$router.push('/');
+      });
     }
+   }
 }
 </script>

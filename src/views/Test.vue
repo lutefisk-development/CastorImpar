@@ -1,5 +1,6 @@
 <template>
    <div>
+      
       <Login></Login>
       <RegMember></RegMember>
       <LillaSalen></LillaSalen>
@@ -11,7 +12,7 @@
 
 <script>
 import Login from '@/components/LoginComponent.vue'
-import RegMember from '@/components/RegMemberComponent.vue'
+import register from '@/components/RegMemberComponent.vue'
 import Footer from '@/components/Footer.vue'
 import LillaSalen from '@/components/LillaSalen.vue'
 import StoraSalen from '@/components/StoraSalen.vue'
