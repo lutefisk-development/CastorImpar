@@ -37,17 +37,17 @@ export default {
       };
    },
    created() {
-      this.$axios.get("seats.php").then(response => {
-         this.rows = response.data
-         .filter(row => {
-            return row.salon_ID == 2;
-         })
-         .map(r => {
-            r.seats *= 1;
-            return r;
-         });
-      // console.log(this.rows);
-      });
+      // this.$axios.get("seats.php").then(response => {
+      //    this.rows = response.data
+      //    .filter(row => {
+      //       return row.salon_ID == 2;
+      //    })
+      //    .map(r => {
+      //       r.seats *= 1;
+      //       return r;
+      //    });
+      // // console.log(this.rows);
+      // });
    },
    methods: {
       pickSeat: function() {
