@@ -63,9 +63,10 @@
          </div>
       </div>
     </div>
-
     <br>
-    <button v-on:click="reserveSeat" class="btn btn-danger">PICK MEEEE!!!</button>
+    <p class="summa">Slutsumma: {{ totalPrice }} kr</p>
+    <br>
+    <button v-on:click="reserveSeat" class="btn btn-danger pickSeatButton">Boka Din Visning</button>
   </div>
 </template>
 
@@ -73,6 +74,7 @@
 .salongcomponent {
   padding-top: 80px;
 }
+
 .form-check-inline {
   margin-right: 0.3rem;
   height: 20px;
@@ -81,6 +83,16 @@
 
 .payment-header {
    background-color: #79924E;
+   color: white;
+}
+
+.pickSeatButton {
+   border: none !important;
+   background-color: white;
+   color: #79924E;
+}
+
+.summa {
    color: white;
 }
 </style>
@@ -105,6 +117,7 @@ export default {
       standard: '',
       barn: '',
       pension: '',
+      totalPrice: 0,
       toDatabaseId: "",
       toDatabaseSeat: "",
       toDatabaseRow: "",
@@ -115,12 +128,8 @@ export default {
   created() {
       this.$axios.get("seats.php").then(response => {
          this.showings = response.data
-         // console.log(this.showings);
          this.temp2 = this.showings[this.showings.length - 1];
-         // console.log(this.temp2);
-         // console.log(this.temp2.salon_id);
-         
-            
+                     
             if (this.temp2.salon_id == 1) {
                this.temp3 = 6;
             } else if (this.temp2.salon_id == 2) {
@@ -133,8 +142,6 @@ export default {
                this.showing = this.showings.slice(-8);
             }
          
-         // console.log(this.temp3);
-         // console.log(this.showing);
          this.showing.sort((a, b) => (a.row_number > b.row_number) ? 1 : -1);
          this.showing.map(r => {
             r.seats *= 1;
@@ -167,45 +174,37 @@ export default {
          })
       },
       barnP() {
+         let temp = parseInt(this.barn, 10);
+         this.barn = temp;
          this.chosenPrice.push(this.barn);
-         console.log(this.chosenPrice);
+         temp = 0;
+         temp += this.barn;
+         this.totalPrice += temp;
       },
       pensionP() {
+         let temp = parseInt(this.pension, 10);
+         this.pension = temp;
          this.chosenPrice.push(this.pension);
-         console.log(this.chosenPrice);
+         temp = 0;
+         temp += this.pension;
+         this.totalPrice += temp;
       },
       standardP() {
+         let temp = parseInt(this.standard, 10);
+         this.standard = temp;
          this.chosenPrice.push(this.standard);
-         console.log(this.chosenPrice);
+         temp = 0;
+         temp += this.standard;
+         this.totalPrice += temp;
       },
       mySeat() {
-      let val = event.target.value;
-      let tempRow = val.split(",")[0];
-      let tempSeat = val.split(",")[1];
-      let seat = parseInt(tempSeat, 10);
-      let row = parseInt(tempRow, 10);
-      this.chosenRow.push(row);
-      this.chosenSeat.push(seat);
-      
-      
-     
-      // console.log(tempBooking);
-      // console.log(this.chosenSeat);
-      // console.log('row ' + row);
-      // console.log('seat ' + seat);
-      
-      
-      
-      
-      
-      
-      // console.log(event.path.value);
-      // for (let seat of this.$refs.inputs) {
-      //    console.log(seat.value);
-      // }
-      // console.log(this.$refs.inputs);
-      // this.test.push(event.path[0].disabled);
-      // console.log(this.test);
+         let val = event.target.value;
+         let tempRow = val.split(",")[0];
+         let tempSeat = val.split(",")[1];
+         let seat = parseInt(tempSeat, 10);
+         let row = parseInt(tempRow, 10);
+         this.chosenRow.push(row);
+         this.chosenSeat.push(seat);
       }
    }
 };
