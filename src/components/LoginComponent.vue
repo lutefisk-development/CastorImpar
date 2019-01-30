@@ -9,7 +9,7 @@
                      <span aria-hidden="true">&times;</span>
                   </button>
                   <h5 class="modal-title h5-login" id="exampleModalLabel">Castor Impar medlemsklubb</h5>
-                  <p class="modal-title p-login" id="exampleModalLabel">Ta del av nyheter, samla poång och mycket mer!</p>
+                  <p class="modal-title p-login" id="exampleModalLabel">Ta del av nyheter, samla poäng och mycket mer!</p>
                </div>
                <div class="modal-body">
                   <h6>Logga in</h6>
@@ -28,6 +28,7 @@
       </div>
    </div>
 </template>
+
 
 <style>
 
@@ -75,7 +76,7 @@
    .h5-login {
       font-size: 14px;
    }
-   
+
    .p-login {
       font-size: 14px;
    }
@@ -93,4 +94,3 @@ export default {
 
 };
 </script>
-
