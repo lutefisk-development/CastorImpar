@@ -8,16 +8,24 @@
         </div>
         <div class="card-body">
           <div>
-            <h3>{{ order[bookingNr].title }}</h3>
+            <h3>{{ order[0].title }}</h3>
           </div>
-          <div>{{ order[bookingNr].date_time }}</div>
-          <div>{{ order[bookingNr].seat }}</div>
+          <div>{{ order[0].date_time }}</div>
           <br>
-          <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
+          <div>Ditt bokningsnummer att att uppge i kassan: {{order[0].id }}</div>
           <br>
           <div>Filmastaden Småstaden</div>
-          <div>Biljett typ: {{ order[bookingNr].name }}</div>
-          <div>Totalpris: {{ order[bookingNr].price }}kr</div>
+          <div>Salong: {{ order[0].salon_name }}</div>
+          <br>
+          <div v-for="ord in order" :key="ord">
+            <hr>
+            {{ ord.name }} {{ ord.price }}kr
+            <br>
+            Rad: {{ ord.row_nr }} Plats: {{ ord.seatnumber }}
+            <br>
+            <br>
+          </div>
+          <br>
         </div>
         <div class="card-footer text-muted">
           Biljetter hämtas ut mins 15 min innan filmen
@@ -45,12 +53,12 @@ export default {
   data() {
     return {
       order: false,
-      bookingNr: 0
+      ord: false
     };
   },
   created() {
     this.$axios.get("confirmOrder_db.php").then(response => {
-      this.order = response.data;
+      this.order = response.data.reverse();
     });
   }
 };

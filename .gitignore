@@ -22,8 +22,4 @@ yarn-error.log*
 backend/config\.php
 src/plugins/axios\.js
 
-<<<<<<< HEAD
 backend/config\.php
-=======
-backend/config\.php
->>>>>>> db-koppling-maria
