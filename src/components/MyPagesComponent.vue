@@ -23,10 +23,11 @@
         <div class="bokningar col">
           <section class="card bokning-kort mb-4 p-3">
           <div class="rubrik"><h5>Bokningshistorik</h5></div>
-          <div v-for="title, date_time in personsbookings" :key="personsbookings.id">
-            <p>{{ titel }}</p>
+          <!---<div v-for="title, date_time in personsbookings" :key="personsbookings.id"> ---->
+            <p>{{ personsbookings }}</p>
+            <p> {{ titel }} </p>
             <p>{{ biodatum }}</p>
-          </div>
+          <!---</div> ---->
   
           </section>
 </div>
