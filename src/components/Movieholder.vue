@@ -1,5 +1,6 @@
 <template>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div>
+  <div id="carouselExampleControls" class="carousel slide" data-interval="false" data-ride="carousel">
    
   
       <div class="carousel-inner">
@@ -20,7 +21,7 @@
             <div class="button-group">
              
               <button  @click="showModal = true">Read more</button>
-               <modal v-if="showModal" @close="showModal = false" v-bind:movie="movie"></modal>
+              <modal  v-if="showModal" @close="showModal = false" v-bind:movie="movie"></modal>
     
              
             </div>
@@ -33,6 +34,8 @@
 
 
     
+  </div>
+ 
   </div>
 </template>
 
@@ -53,7 +56,7 @@
   border-top: 3px solid black;
   background-color: white;
   font-size: 12px;
-  line-height: 12px;
+  line-height: 14px;
 }
 
 .button-group {
@@ -163,9 +166,7 @@ export default {
     getImgUrl(pic) {
       return require("../images/" + pic);
     },
-    openModal(movie) {
-      this.showModal = true;
-    }
+   
   }
 };
 </script>
