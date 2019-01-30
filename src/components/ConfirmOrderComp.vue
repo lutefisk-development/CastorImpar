@@ -1,37 +1,57 @@
 <template>
   <div class="order">
-    <div class="top-box"></div>
-    <h3>Tack för din bokning!</h3>
-    <div>Ditt bokningsnummer att att uppge i kassan: {{ booknr }}</div>
-    <br>
-    <div>{{ movie }}</div>
-    <div>{{ dateTime }}</div>
-    <div>Filmastaden Småstaden</div>
-    <div>Biljett typ: {{ ticketType }}</div>
-    <div>Totalpris: {{ price }}kr</div>
-    <br>
-    <div>
-      Biljetter hämtas ut mins 15 min innan filmen
-      startar, betalning sker på plats.
-    </div>
-    <div class="return-box">
-      <button>Återgå till filmvy</button>
+    <div v-if="order">
+      <div class="top-box"></div>
+      <div class="card text-center">
+        <div class="card-header">
+          <h4>Tack för din bokning!</h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>{{ order[bookingNr].title }}</h3>
+          </div>
+          <div>{{ order[bookingNr].date_time }}</div>
+          <div>{{ order[bookingNr].seat }}</div>
+          <br>
+          <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
+          <br>
+          <div>Filmastaden Småstaden</div>
+          <div>Biljett typ: {{ order[bookingNr].name }}</div>
+          <div>Totalpris: {{ order[bookingNr].price }}kr</div>
+        </div>
+        <div class="card-footer text-muted">
+          Biljetter hämtas ut mins 15 min innan filmen
+          startar, betalning sker på plats.
+        </div>
+      </div>
+      <div class="return-box">
+        <form class="return-button" action="/">
+          <input type="submit" value="Återgå till filmvy">
+        </form>
+      </div>
     </div>
   </div>
 </template>
 
 
+
+
 <script>
+var moment = require("moment");
+moment().format();
+
 export default {
-  name: "ConfirmOrder",
+  name: "order",
   data() {
     return {
-      booknr: "12345",
-      movie: "Aquaman",
-      dateTime: "24/1 22.30",
-      ticketType: "Vuxen",
-      price: "85"
+      order: false,
+      bookingNr: 0
     };
+  },
+  created() {
+    this.$axios.get("confirmOrder_db.php").then(response => {
+      this.order = response.data;
+    });
   }
 };
 </script>
@@ -39,6 +59,7 @@ export default {
 <style>
 .order {
   font-weight: bold;
+  background-color: white;
 }
 .return-box {
   background-color: #79924e;
@@ -52,7 +73,7 @@ export default {
   height: 5vh;
   margin-bottom: 10vh;
 }
-button {
+.return-button {
   margin: 5px;
 }
 br {
