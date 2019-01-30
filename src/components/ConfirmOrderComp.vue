@@ -8,16 +8,17 @@
         </div>
         <div class="card-body">
           <div>
-            <h3>{{ order[bookingNr].title }}</h3>
+            <h3>{{ order[0].title }}</h3>
           </div>
-          <div>{{ order[bookingNr].date_time }}</div>
-          <div>{{ order[bookingNr].seat }}</div>
+          <div>{{ order[0].date_time }}</div>
+          <div>Salong: {{ order[0].salon_id }}</div>
+          <div>Rad: {{ order[0].rownumber }} Plats: {{ order[0].seatnumber }}</div>
           <br>
-          <div>Ditt bokningsnummer att att uppge i kassan: {{order[bookingNr].id }}</div>
+          <div>Ditt bokningsnummer att att uppge i kassan: {{order[0].id }}</div>
           <br>
           <div>Filmastaden Småstaden</div>
-          <div>Biljett typ: {{ order[bookingNr].name }}</div>
-          <div>Totalpris: {{ order[bookingNr].price }}kr</div>
+          <div>Biljett typ: {{ order[0].name }}</div>
+          <div>Totalpris: {{ order[0].price }}kr</div>
         </div>
         <div class="card-footer text-muted">
           Biljetter hämtas ut mins 15 min innan filmen
@@ -44,8 +45,7 @@ export default {
   name: "order",
   data() {
     return {
-      order: false,
-      bookingNr: 0
+      order: false
     };
   },
   created() {
