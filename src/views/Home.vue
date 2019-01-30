@@ -16,7 +16,7 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
-import calendercomponent from "@/components/movieChoiseBox.vue";
+import calendercomponent from "@/components/CalenderComponent.vue";
 import Movieholder from "@/components/Movieholder.vue";
 
 export default {
