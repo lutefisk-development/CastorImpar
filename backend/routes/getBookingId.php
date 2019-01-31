@@ -2,10 +2,7 @@
 include('../boot.php');
 
 // vi hämtar svaret ifrån databasen
-$statement = $db->query("SELECT * FROM bookings, salon_row, schedule 
-WHERE bookings.schedulebooking_id = schedule.id
-AND schedule.salon_id = salon_row.salon_id 
-ORDER BY bookings.id");
+$statement = $db->query("SELECT * FROM bookings ORDER BY bookings.id ASC");
 $statement->execute();
 $response = $statement->fetchAll(PDO::FETCH_ASSOC);
 

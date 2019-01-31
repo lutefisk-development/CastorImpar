@@ -1,6 +1,6 @@
 <template>
-	<div>
-<navbar> </navbar>
+  <div>
+    <navbar></navbar>
 
     <calendercomponent></calendercomponent>
     <Movieholder></Movieholder>
@@ -22,11 +22,10 @@ import Movieholder from "@/components/Movieholder.vue";
 export default {
   name: "home",
   components: {
-     calendercomponent,
-     Movieholder,
-     HelloWorld,
-    Footer,
-
+    calendercomponent,
+    Movieholder,
+    HelloWorld,
+    Footer
   }
 };
 </script>
