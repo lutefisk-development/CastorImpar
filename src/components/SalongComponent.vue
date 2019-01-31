@@ -79,9 +79,13 @@
         </div>
       </div>
     </div>
-
     <br>
-    <button v-on:click="reserveSeat" class="btn btn-danger">PICK MEEEE!!!</button>
+    <button v-on:click="reserveSeat" class="btn btn-danger">Bekräfta biljett</button>
+    <div>
+      <form class="confirms" action="/confirmorder">
+        <input type="submit" value="Bekräfta bokning">
+      </form>
+    </div>
   </div>
 </template>
 
@@ -180,7 +184,6 @@ export default {
         })
         .then(response => {
           console.log("du har skickat till php", response);
-          this.$router.push("confirmorder");
         });
     },
     barnP() {
