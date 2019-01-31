@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div id="carouselExampleControls" class="carousel slide"  data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide" data-interval="false" data-ride="carousel">
    
   
       <div class="carousel-inner">
