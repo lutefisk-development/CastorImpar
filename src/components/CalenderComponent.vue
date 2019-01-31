@@ -8,7 +8,7 @@
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
-      >SHOWINGS</button>
+      >Här bokar du din film </button class="showMovies">
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" v-for="day in days" v-on:click="selectDate(day)">
           <div class="movie-title">{{day.title}}</div>
@@ -37,6 +37,25 @@
 
 .dropdown-item {
   margin-bottom: 0% !important;
+}
+
+.mainframe{
+  width: 100vw;
+  height:11vh;
+  background-color: #F5F7E1;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+#dropdownMenuButton {
+  border: 1px solid black;
+  box-shadow:none !important;
+  margin-top:2vh;
+  background-color: #79924E !important;
+}
+
+.showMovies {
+  background-color: #79924E !important;
 }
 </style>
 

@@ -8,7 +8,7 @@
                  <div class="card-mypage p-4">
                    <div class="card-header profile-head">
                     <h1>Mina sidor</h1>
-                    <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Logga ut</a>
+                    <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true" @click="logout()">Logga ut</router-link>
                     <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</a>
                   </div><!--end card header-->
                   <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
@@ -195,6 +195,16 @@ created(){
     })
   },
 methods:{
+     logout() {
+      this.loading = true;
+      this.$axios.post('logout.php').then(response => {
+        this.loading = false;
+        this.user = {};
+      }).catch(error => {
+        console.log('logout error', error);
+        this.loading = false;
+      });
+    }
 
 }
 }

@@ -1,6 +1,6 @@
 <template>
-  <div class="login">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">login</button>
+  <div class="loginComponent">
+      <button type="button" class="btn btn-primary signIn-button bottom" data-toggle="modal" data-target="#loginModal">login</button>
       <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -20,7 +20,7 @@
                      <input type="password" v-model="password" class="form-control login-form" placeholder="Lösenord" aria-label="Lösenord" aria-describedby="addon-wrapping">
                   </div>
                   <p class="login-form login-lower glömt">Jag har glömt mitt lösenord</p>
-                  <button tag="button" data-dismiss="modal" class="btn btn-primary login-form login-button" v-on:click = "submit()" >LOGGA IN</button>
+                  <button tag="button" data-dismiss="modal" class="btn btn-primary login-form login-button" v-on:click="submit()" >LOGGA IN</button>
                </div>
                <div class="modal-footer login-footer"></div>
             </div>
@@ -54,6 +54,10 @@
       color: white;
    }
 
+   .loginComponent {
+     background-color: #79924E;
+    color: white;
+   }
    .login-form {
       margin-top: 10px;
    }
@@ -89,6 +93,17 @@
    .login-button {
       background-color:  #79924E;
       border: none;
+   }
+
+   .signIn-button {
+     margin-top: 5px;
+     border: 1px solid black !important;
+     background-color: #F5F7E1;
+     color: black;
+   }
+
+   .bottom {
+     margin-bottom: 206px;
    }
 
 </style>

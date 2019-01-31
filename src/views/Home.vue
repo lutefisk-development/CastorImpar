@@ -1,10 +1,7 @@
 <template>
   <div>
-    <navbar></navbar>
-
     <calendercomponent></calendercomponent>
     <Movieholder></Movieholder>
-    <upcomingMovies></upcomingMovies>
 
     <!--<img alt="Vue logo" src="../assets/logo.png">-->
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
