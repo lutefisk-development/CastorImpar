@@ -1,6 +1,6 @@
 <template>
-  <div class="login">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#regModal">registrera</button>
+  <div class="loginComponent">
+      <button type="button" class="btn btn-primary signIn-button top" data-toggle="modal" data-target="#regModal">registrera</button>
       <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -88,6 +88,10 @@
    .reg-button {
       background-color:  #79924E;
       border: none;
+   }
+
+   .top {
+      margin-top: 60px !important;
    }
 
 </style>

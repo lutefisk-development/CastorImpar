@@ -18,12 +18,14 @@
           <div>Salong: {{ order[0].salon_name }}</div>
           <br>
           <div v-for="ord in order" :key="ord">
-            <hr>
-            {{ ord.name }} {{ ord.price }}kr
-            <br>
-            Rad: {{ ord.row_nr }} Plats: {{ ord.seatnumber }}
-            <br>
-            <br>
+            <div v-if="order[0].id==ord.id">
+              <hr>
+              {{ ord.name }} {{ ord.price }}kr
+              <br>
+              Rad: {{ ord.row_nr }} Plats: {{ ord.seatnumber }}
+              <br>
+              <br>
+            </div>
           </div>
           <br>
         </div>
