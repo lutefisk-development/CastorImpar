@@ -1,69 +1,91 @@
 <template>
   <div class="salongcomponent">
-      <div v-for="row in showing" v-bind:key="row.id">
-         <input
-      
-         ref="inputs"
-         class="form-check-inline seat"
-         :data-row="row.row_number"
-         :data-seat="seatNr"
-         type="checkbox"
-         :value="row.row_number + ',' + seatNr"
-         v-for="seatNr of row.seats"
-         v-bind:key="seatNr"
-         @click.once="mySeat"
-         data-toggle="modal"
-         data-target="#paymentModal"
-      
-         >
-      </div>
-      <div
-         class="modal fade"
-         id="paymentModal"
-         tabindex="-1"
-         role="dialog"
-         aria-labelledby="exampleModalLabel"
-         aria-hidden="true"
+    <div v-for="row in showing" v-bind:key="row.id">
+      <input
+        ref="inputs"
+        class="form-check-inline seat"
+        :data-row="row.row_number"
+        :data-seat="seatNr"
+        type="checkbox"
+        :value="row.row_number + ',' + seatNr"
+        v-for="seatNr of row.seats"
+        v-bind:key="seatNr"
+        @click.once="mySeat"
+        data-toggle="modal"
+        data-target="#paymentModal"
       >
+    </div>
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog" role="document">
-         <div class="modal-content">
-            <div class="modal-header payment-header">
-               <h5 class="modal-title" id="exampleModalLabel">Välj Biljett</h5>
+        <div class="modal-content">
+          <div class="modal-header payment-header">
+            <h5 class="modal-title" id="exampleModalLabel">Välj Biljett</h5>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" aria-label="Close" data-dismiss="modal" @click="standardP">
+                  <span aria-hidden="true"></span>
+                </div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                value="Vuxen Pris - 85kr"
+                aria-label="Text input with radio button"
+                readonly
+              >
             </div>
-            <div class="modal-body">
-               <div class="input-group">
-                  <div class="input-group-prepend">
-                     <div class="input-group-text">
-                        <input type="radio" aria-label="Close" data-dismiss="modal" @click="standardP">
-                           <span aria-hidden="true"></span>
-                     </div>
-                  </div>
-                  <input type="text" class="form-control" value="Vuxen Pris - 85kr" aria-label="Text input with radio button" readonly>
-               </div>
-               <div class="input-group">
-                  <div class="input-group-prepend">
-                     <div class="input-group-text">
-                        <input type="radio" aria-label="Close" data-dismiss="modal" @click="barnP">
-                           <span aria-hidden="true"></span>
-                     </div>
-                  </div>
-                  <input type="text" class="form-control" value="Barn Pris - 65kr" aria-label="Text input with radio button" readonly>
-               </div>
-               <div class="input-group">
-                  <div class="input-group-prepend">
-                     <div class="input-group-text">
-                        <input type="radio" aria-label="Close" data-dismiss="modal" @click="pensionP">
-                           <span aria-hidden="true"></span>
-                     </div>
-                  </div>
-                  <input type="text" class="form-control" value="Pensionär Pris - 75kr" aria-label="Text input with radio button" readonly>
-               </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" aria-label="Close" data-dismiss="modal" @click="barnP">
+                  <span aria-hidden="true"></span>
+                </div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                value="Barn Pris - 65kr"
+                aria-label="Text input with radio button"
+                readonly
+              >
             </div>
-            <div class="modal-footer"></div>
-         </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" aria-label="Close" data-dismiss="modal" @click="pensionP">
+                  <span aria-hidden="true"></span>
+                </div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                value="Pensionär Pris - 75kr"
+                aria-label="Text input with radio button"
+                readonly
+              >
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
       </div>
     </div>
     <br>
+    <button v-on:click="reserveSeat" class="btn btn-danger">Bekräfta biljett</button>
+    <div>
+      <form class="confirms" action="/confirmorder">
+        <input type="submit" value="Bekräfta bokning">
+      </form>
+    </div>
     <p class="summa">Slutsumma: {{ totalPrice }} kr</p>
     <br>
     <button v-on:click="reserveSeat" class="btn btn-danger pickSeatButton">Boka Din Visning</button>
@@ -82,8 +104,8 @@
 }
 
 .payment-header {
-   background-color: #79924E;
-   color: white;
+  background-color: #79924e;
+  color: white;
 }
 
 .pickSeatButton {
@@ -102,12 +124,12 @@ export default {
   name: "SalongComponent",
   data() {
     return {
-      booking: '',
+      booking: "",
       chosenSeat: [],
       chosenRow: [],
       chosenPrice: [],
       temp2: [],
-      temp3: '',
+      temp3: "",
       temp4: [],
       getBookingId: [],
       showings: [],
