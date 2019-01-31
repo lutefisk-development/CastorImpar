@@ -2,7 +2,7 @@
 include('../boot.php');
 
 // vi hämtar svaret ifrån databasen
-$statement = $db->query("SELECT * FROM members");
+$statement = $db->query("SELECT id FROM bookings WHERE id = (SELECT MAX(id) FROM bookings)");
 $statement->execute();
 $response = $statement->fetchAll(PDO::FETCH_ASSOC);
 

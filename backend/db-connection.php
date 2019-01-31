@@ -1,4 +1,6 @@
 <?php
+  require_once('config.php');
+
 // Anslut till databas
 // PDO kräver felhantering med try-catch vid anslutning.
 require_once('config.php');
@@ -12,7 +14,7 @@ try{
 
   // vi ser till att vi MySQL använder UTF-8 vid läsning av queries
   $db->exec("SET CHARACTER SET utf8");
-  
+
 
 // om något går fel i anslutningen
 }catch(PDOException $e) {

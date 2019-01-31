@@ -1,122 +1,140 @@
 <template>
-   <div class="start">
-      <div>
-         <input class="form-check-inline" type="checkbox" v-for="item in items1" @click="pickedSeats" :key="item.id" :value="item.value"
-         :checked="item.checked" :disabled="item.disabled">
+  <div class="start">
+    <div v-for="row in rows" v-bind:key="row.id">
+      <input
+        class="form-check-inline"
+        :data-row="row.row_number"
+        :data-seat="seatNr"
+        type="checkbox"
+        :value="row.row_number + ',' + seatNr"
+        v-for="seatNr of row.seats"
+        v-bind:key="seatNr"
+        @click="pickSeat"
+      >
+    </div>
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{ pickPrice }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group" v-for="price in prices" v-bind:key="price.id">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input
+                    type="radio"
+                    v-bind:key="pickedPrice"
+                    v-for="pickedPrice of prices.price"
+                    aria-label="Radio button for following text input"
+                  >
+                </div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                value="Vuxen Pris"
+                aria-label="Text input with radio button"
+                readonly
+              >
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
       </div>
-      <div>
-         <input class="form-check-inline" type="checkbox" v-for="item in items2" @click="pickedSeats" :key="item.id" :value="item.value"
-         :checked="item.checked" :disabled="item.disabled">
-      </div>
-      <div>
-         <input class="form-check-inline" type="checkbox" v-for="item in items3" @click="pickedSeats" :key="item.id" :value="item.value"
-         :checked="item.checked" :disabled="item.disabled">
-      </div>
-      <div>
-         <input class="form-check-inline" type="checkbox" v-for="item in items4" @click="pickedSeats" :key="item.id" :value="item.value"
-         :checked="item.checked" :disabled="item.disabled">
-      </div>
-      <div>
-         <input class="form-check-inline" type="checkbox" v-for="item in items5" @click="pickedSeats" :key="item.id" :value="item.value"
-         :checked="item.checked" :disabled="item.disabled">
-      </div>
-      <div>
-         <input class="form-check-inline" type="checkbox" v-for="item in items6" @click="pickedSeats" :key="item.id" :value="item.value"
-         :checked="item.checked" :disabled="item.disabled">
-      </div>
-   </div>
+    </div>
+    <button @click="orderSeats">yeay</button>
+  </div>
 </template>
 
 <style>
-   .start {
-      Padding-top: 80px;
-   }
-   .form-check-inline {
-      margin-right: 0.3rem;
-      height: 20px;
-      width: 20px;
-   }
+.start {
+  padding-top: 80px;
+}
+.form-check-inline {
+  margin-right: 0.3rem;
+  height: 20px;
+  width: 20px;
+}
 </style>
 
 
 <script>
 export default {
-   name: 'LillaSalen',
-   data() {
-      return {
-         items1: [
-            {value: 1},
-            {value: 2},
-            {value: 3},
-            {value: 4},
-            {value: 5},
-            {value: 6}
-         ],
-         items2: [
-            {value: 7},
-            {value: 8},
-            {value: 9},
-            {value: 10},
-            {value: 11},
-            {value: 12},
-            {value: 13},
-            {value: 14}
-         ],
-         items3: [
-            {value: 15},
-            {value: 16},
-            {value: 17},
-            {value: 18},
-            {value: 19},
-            {value: 20},
-            {value: 21},
-            {value: 22},
-            {value: 23}
-         ],
-         items4: [
-            {value: 24},
-            {value: 25},
-            {value: 26},
-            {value: 27},
-            {value: 28},
-            {value: 29},
-            {value: 30},
-            {value: 31},
-            {value: 32},
-            {value: 33}
-         ],
-         items5: [
-            {value: 34},
-            {value: 35},
-            {value: 36},
-            {value: 37},
-            {value: 38},
-            {value: 39},
-            {value: 40},
-            {value: 41},
-            {value: 42},
-            {value: 43}
-         ],
-         items6: [
-            {value: 44},
-            {value: 45},
-            {value: 46},
-            {value: 47},
-            {value: 48},
-            {value: 49},
-            {value: 50},
-            {value: 51},
-            {value: 52},
-            {value: 53},
-            {value: 54},
-            {value: 55}
-         ]
+  name: "LillaSalen",
+  data() {
+    return {
+      pickPrice: "Välj Biljett",
+      rows: [],
+      pickedSeats: [],
+      prices: [],
+      salon: "",
+      seat: ""
+    };
+  },
+  created() {
+   //  this.$axios.get("seats.php").then(response => {
+   //    this.rows = response.data
+   //      .filter(row => {
+   //        return row.salon_ID == 1;
+   //      })
+   //      .map(r => {
+   //        r.seats *= 1;
+   //        return r;
+   //      });
+   //    console.log(this.rows);
+   //  });
+  },
+  methods: {
+    pickSeat() {
+      console.log('target', event.target);
+      let val = event.target.value;
+      let row = val.split(",")[0];
+      let seat = val.split(",")[1];
+      let temp = parseInt(seat, 10);
+      if (row == 1) {
+        temp = temp;
+      } else if (row == 2) {
+        temp += 6;
+      } else if (row == 3) {
+        temp += 14;
+      } else if (row == 4) {
+        temp += 23;
+      } else if (row == 5) {
+        temp += 33;
+      } else if (row == 6) {
+        temp += 43;
       }
-   },
-   methods: {
-      pickedSeats: function() {
-         console.log('STOL NR: ' + event.target.value)
+      // this.pickedSeats = temp;
+      this.pickedSeats.push(temp);
+      console.log(this.pickedSeats);
+    },
+    orderSeats: function() {
+      for (let i = 0; i < this.pickedSeats.length; i++) {
+         console.log(this.pickedSeats[i]);
       }
-   }
-}
+      // this.$axios.post('place-order-seats.php',{
+      //    salon: this.rows[0].salon_ID,
+      //    seat: this.pickedSeats
+      // }).then((response) => {
+      //    console.log('du har skickat till php', response);
+      // })
+      this.pickedSeats.length = 0;
+      console.log(this.pickedSeats);
+    }
+  }
+};
+
+// data-toggle="modal"
+// data-target="#paymentModal"
 </script>
