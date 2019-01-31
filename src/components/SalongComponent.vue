@@ -80,15 +80,18 @@
       </div>
     </div>
     <br>
-    <button v-on:click="reserveSeat" class="btn btn-danger">Bekräfta biljett</button>
-    <div>
-      <form class="confirms" action="/confirmorder">
-        <input type="submit" value="Bekräfta bokning">
-      </form>
-    </div>
     <p class="summa">Slutsumma: {{ totalPrice }} kr</p>
     <br>
-    <button v-on:click="reserveSeat" class="btn btn-danger pickSeatButton">Boka Din Visning</button>
+    
+    <button v-on:click="reserveSeat" class="btn btn-danger pickSeatButton">Reservera Biljett</button>
+  
+    <br>
+    <br>
+    
+      <form class="confirms secondPickSeatButton" role="button" action="/confirmorder">
+        <input type="submit" value="Bekräfta bokning" class="hej">
+      </form>
+      
   </div>
 </template>
 
@@ -109,8 +112,20 @@
 }
 
 .pickSeatButton {
+
    border: none !important;
    background-color: white;
+   color: #79924E;
+}
+
+.secondPickSeatButton {
+     background-color: #79924E;
+   color: white;
+}
+
+.hej {
+  width:  190px;
+  background-color: white;
    color: #79924E;
 }
 
