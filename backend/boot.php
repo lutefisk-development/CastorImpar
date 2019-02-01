@@ -5,7 +5,7 @@ include('cors.php');
 
 // startar ny eller fortsätter session
 session_start();
-error_reporting( E_ALL );
+
 // Sätt en header som anger att svaret (response body) kommer att vara JSON:
 header('Content-type: application/json; charset=UTF-8');
 
