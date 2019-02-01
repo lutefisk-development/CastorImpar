@@ -9,7 +9,8 @@
                    <div class="card-header profile-head">
                     <h1>Mina sidor</h1>
                     <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true" @click="logout()">Logga ut</router-link>
-                    <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</a>
+                      <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</router-link>
+                
                   </div><!--end card header-->
                   <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
                   <div class="card-footer profile-foot">
@@ -212,7 +213,7 @@ methods:{
 
 
 
- 
+//  <a href="#" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</a>
 
 
 </script>

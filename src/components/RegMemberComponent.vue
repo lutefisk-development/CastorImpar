@@ -31,7 +31,7 @@
                      <input type="text" class="form-control reg-form" v-model="phone" :disabled="loading" placeholder="Mobil" aria-label="Stad" aria-describedby="addon-wrapping">
                   </div>
 
-                  <button type="button" class="btn btn-primary reg-form reg-button" v-on:click="submit()" v-on data-dismiss="modal">BLI MEDLEM</button>
+                  <button type="button" class="btn btn-primary reg-form reg-button" v-on:click="submit()" data-dismiss="modal">BLI MEDLEM</button>
                </div>
                <div class="modal-footer"></div>
             </div>

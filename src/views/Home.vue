@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <calendercomponent></calendercomponent>
     <Movieholder></Movieholder>
     <upcomingMovies></upcomingMovies>
@@ -23,6 +22,7 @@ export default {
   name: "home",
   components: {
     calendercomponent,
+    upcomingMovies,
     Movieholder,
      upcomingMovies,
      HelloWorld,

@@ -5,7 +5,7 @@
       Se spelschema och välj film här!
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" v-for="day in days" v-on:click="selectDate(day)"><div class='movie-title'>{{day.title}}</div>{{ day.datum.format('ll') }}  {{day.tid}}</a>
+      <a class="dropdown-item" v-for="day in days" v-on:click="selectDate(day)" v-bind:key="day.id"><div class='movie-title'>{{day.title}}</div>{{ day.datum.format('ll') }}  {{day.tid}}</a>
       </div>
     </div>
     <div class='<visning v-for="visning in visningar"></visning>'> </div>

@@ -164,10 +164,19 @@ export default {
   },
   methods: {
     getImgUrl(pic) {
-      return require("../images/" + pic);
+      console.log('pic' , pic);
+      if (!pic) {
+        return '';
+      }
+
+      let x = require("../images/" + pic);
+      if (x) {
+        return x
+      }
+      return '';
+      
     },
    
   }
 };
 </script>
-
