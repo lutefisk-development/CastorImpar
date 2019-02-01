@@ -19,7 +19,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-backend/config\.php
-src/plugins/axios\.js
 
-backend/config\.php
+src/plugins/axios.js
+
+backend/config.php

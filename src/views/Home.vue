@@ -3,7 +3,7 @@
     <calendercomponent></calendercomponent>
     <Movieholder></Movieholder>
     <upcomingMovies></upcomingMovies>
-
+   
     <!--<img alt="Vue logo" src="../assets/logo.png">-->
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <Footer></Footer>
@@ -24,8 +24,10 @@ export default {
     calendercomponent,
     upcomingMovies,
     Movieholder,
-    HelloWorld,
-    Footer
+     upcomingMovies,
+     HelloWorld,
+    Footer,
+    
   }
 };
 </script>
