@@ -1,7 +1,5 @@
 <template>
   <div>
-    <navbar></navbar>
-
     <calendercomponent></calendercomponent>
     <Movieholder></Movieholder>
     <upcomingMovies></upcomingMovies>
@@ -18,11 +16,13 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
 import calendercomponent from "@/components/CalenderComponent.vue";
 import Movieholder from "@/components/Movieholder.vue";
+import upcomingMovies from "@/components/upcomingMovies.vue";
 
 export default {
   name: "home",
   components: {
     calendercomponent,
+    upcomingMovies,
     Movieholder,
     HelloWorld,
     Footer

@@ -109,7 +109,7 @@ export default {
         })
         .then(response => {
           console.log("skickat in film till php", response);
-          this.$router.push("confirmorder");
+          this.$router.push("salongen");
         });
       //-------------------------------------------------------------//
     }
