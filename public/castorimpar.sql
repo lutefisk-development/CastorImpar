@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2019 at 07:07 PM
+-- Generation Time: Feb 02, 2019 at 11:34 AM
 -- Server version: 5.6.37
 -- PHP Version: 7.0.22
 
@@ -33,19 +33,16 @@ CREATE TABLE IF NOT EXISTS `booked_seats` (
   `salon_id` int(11) NOT NULL,
   `row_nr` int(11) NOT NULL,
   `bookings_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `booked_seats`
 --
 
 INSERT INTO `booked_seats` (`id`, `price_id`, `seatnumber`, `salon_id`, `row_nr`, `bookings_id`) VALUES
-(22, 85, 5, 2, 4, 20),
-(23, 75, 1, 1, 1, 22),
-(24, 85, 3, 1, 1, 23),
-(25, 75, 4, 1, 3, 24),
-(26, 85, 5, 2, 3, 25),
-(27, 75, 4, 1, 1, 26);
+(28, 85, 1, 2, 1, 29),
+(29, 75, 4, 2, 1, 30),
+(30, 85, 4, 1, 3, 31);
 
 -- --------------------------------------------------------
 
@@ -57,23 +54,16 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   `id` int(11) unsigned NOT NULL,
   `schedulebooking_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bookings`
 --
 
 INSERT INTO `bookings` (`id`, `schedulebooking_id`, `user_id`) VALUES
-(1, 12, NULL),
-(20, 6, NULL),
-(21, 7, NULL),
-(22, 9, NULL),
-(23, 3, NULL),
-(24, 3, NULL),
-(25, 7, NULL),
-(26, 3, NULL),
-(27, 12, NULL),
-(28, 12, NULL);
+(29, 6, NULL),
+(30, 6, NULL),
+(31, 15, NULL);
 
 -- --------------------------------------------------------
 
@@ -110,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `points` int(10) NOT NULL,
   `password` varchar(255) NOT NULL DEFAULT '',
   `image` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `members`
@@ -122,7 +112,8 @@ INSERT INTO `members` (`id`, `firstname`, `lastname`, `email`, `phone`, `points`
 (4, 'ee', 'ee', 'ee@ee.ee', 7777, 0, '$2y$10$I/QDAy0of.9N6NWmlZdf3udx74nuW5jb5mDPxvSYUr6LwayY4DLBW', ''),
 (5, 'per', 'hanson', 'per@hej.se', 789, 0, '$2y$10$2ncIRAGAmBvS.PMn9DTOwuYg5.mUL93EQB9gvxUhlcVH9eE/g84rK', ''),
 (6, 'test', 'test', 'hejhej@hej.se', 222, 0, '$2y$10$gL8VOoT1DI3xupcmsQ/2gee8hz/n0KCWPbdxG0ikalXF3leS.sgqK', ''),
-(7, '1', '1', 'j@j.se', 222, 0, '$2y$10$Qt9BiIRxpdOwvglYblmcSez7sKC19ihYcySNV9BtzlT3glHMc1vWy', '');
+(7, '1', '1', 'j@j.se', 222, 0, '$2y$10$Qt9BiIRxpdOwvglYblmcSez7sKC19ihYcySNV9BtzlT3glHMc1vWy', ''),
+(8, 'jj', 'jj', 'jj@jj', 22, 0, '$2y$10$n8wW8lJG8il.TYBKy.BoUed1KM37Qt5tIk/v86wqppksiGbDUqt6O', '');
 
 -- --------------------------------------------------------
 
@@ -154,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `movies` (
 INSERT INTO `movies` (`id`, `title`, `actor`, `play_time`, `genre`, `description`, `director`, `language`, `subtitle`, `pictures`, `production_year`, `trailer`, `show_dates`, `images`) VALUES
 (1, 'Call me by your name', 'Armie Hammer, Timothée Chalamet, Michael Stuhlbarg', '01:32:00', 'Drama', '<p>Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p><p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.</p>', 'Luca Guadagnino', 'engelska', 'svenska', 'Call-me-by-', 2017, 'Z9AYPxH5NTM', '', 'Call-me-by-your-name.jpg'),
 (2, 'Mera monster, Alfons', 'Animerat, Berättarröst - Jonas Karlsson', '00:40:00', 'Barnfilm', '<p>Tre historier om Alfons Åberg som bor med sin pappa och katten Pussel. Ibland är Alfons barnslig, som när han vägrar äta middag, men ibland är han stor, som när han är barnvakt åt Småtting.</p>', '', 'Svenska', '-', 'Alfons.jpg', 2014, 'yxWia7I8G9c', '', 'Alfons.jpg'),
-(3, 'Gräns', 'Eva Melander, Eero Milonoff, Viktor Åkerblom', '01:08:00', 'Thriller', '<p>Handlingen i Gräns kretsar kring tullpolisen Tina, som har ett sjätte sinne när det gäller att peka ut smugglare. Det är nästan som om hon kan lukta sig till när någon försöker dölja något. Ryktet om hennes skicklighet sprider sig inom poliskåren och hon anlitas för att hitta bevis mot en liga med omfattande kriminell verksamhet. Men när den mystiske Vore kliver av färjan så tvekar hon för första gången på sina känslor.</p><p>Tina anar att Vore döljer något, men kan inte sätta fingret på vad. De attraheras av varandra, men när hon lär känna honom inser hon samtidigt att hela hennes liv är baserat på en enda stor lögn. Precis som Vore så hör Tina inte hemma i den här världen. Nu måste hon välja: fortsätta med sin livslögn eller omfamna den skrämmande sanningen om vem hon egentligen är.</p>', 'Ali Abbassi', 'Svenska', 'Svenska', '', 2018, 'y6NljX3X3XQ', '', 'Border.jpg'),
+(3, 'Gräns', 'Eva Melander, Eero Milonoff, Viktor Åkerblom', '01:08:00', 'Thriller', '<p>Handlingen i Gräns kretsar kring tullpolisen Tina, som har ett sjätte sinne när det gäller att peka ut smugglare. Det är nästan som om hon kan lukta sig till när någon försöker dölja något. Ryktet om hennes skicklighet sprider sig inom poliskåren och hon anlitas för att hitta bevis mot en liga med omfattande kriminell verksamhet. Men när den mystiske Vore kliver av färjan så tvekar hon för första gången på sina känslor.</p>', 'Ali Abbassi', 'Svenska', 'Svenska', '', 2018, 'y6NljX3X3XQ', '', 'Border.jpg'),
 (4, 'Destroyer', 'Nicole Kidman, Toby Kebbell, Tatiana Maslany, Sebastian Stan, Scoot McNairy, Bradley Whitford, Toby Huss, James Jordan, Beau Knapp, Jade Pettyjohn', '01:23:00', 'Action', '<p>LAPD-polisen Erin Bell har påbörjat en moralisk och existentiell resa för att göra upp med sitt mörka förflutna. Som rookie placerades hon undercover med ett kultliknande gäng i den kaliforniska öknen. Ett uppdrag med en tragisk utgång som starkt påverkat hennes liv. När ledaren av det gänget åter dyker upp flera år senare måste hon arbeta sig tillbaka genom de återstående medlemmarna, och sin egen historia med dem, för att äntligen kunna konfrontera de demoner som förföljt henne i alla år.</p>', 'Karyn Kusama', 'Engelska', 'Svenska', '', 2018, 'cjoh3B1OPgU', '', 'Destroyer.jpg'),
 (5, 'Aquaman', 'Jason Momoa, Amber Heard, Willem Dafoe, Patrick Wilson, Dolf Lundgren, Yahya Abdul-Mateen II, Nicole Kidman', '01:43:00', 'Action', '<p>Halvmänniskan och halvatlanten Arthur Curry gör sitt livs resa ? en resa som inte bara tvingar honom att möta sitt sanna jag, utan också upptäcka om han är värdig det han föddes till: en kung. Från regissören James Wan kommer nu det actionspäckade och visuellt storslagna äventyret Aquaman med Jason Momoa i huvudrollen.</p>', 'James Wan', 'Engelska', 'Svenska', '', 2018, 'WDkg3h8PCVU', '', 'Aquaman.jpg');
 
@@ -392,12 +383,12 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `booked_seats`
 --
 ALTER TABLE `booked_seats`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `cinema`
 --
@@ -407,7 +398,7 @@ ALTER TABLE `cinema`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `movies`
 --
