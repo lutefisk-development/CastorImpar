@@ -8,13 +8,13 @@
                  <div class="card-mypage p-4">
                    <div class="card-header profile-head">
                     <h1>Mina sidor</h1>
-                    <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true" @click="logout()">Logga ut</router-link>
+                    <button class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true" v-on:click="logout()">Logga ut</button>
                       <router-link to="/" class="btn btn-outline-secondary btn-sm mx-1" role="button" aria-pressed="true">Visa film</router-link>
                 
                   </div><!--end card header-->
                   <img class="card-img img-fluid" :src="profilbild" alt="profile-picture">
                   <div class="card-footer profile-foot">
-                    <p class="card-text profile-foot-text pt-2">{{ firstName }} {{lastName}}<br>Kundnummer: {{kundnummer}}</p>
+                    <p class="card-text profile-foot-text pt-2">{{ person.firstname }} {{ person.lastname }}<br>Kundnummer: {{ person.id }}</p>
                   </div><!--end card footer-->
                  </div><!--end card-mypage-->
                 </section>
@@ -38,7 +38,7 @@
             <div class="card-poang p-4">
               <div class="card-header poang-head row m-0">
                 <div class="col-6 poang-text"><h5>Poäng:</h5></div>
-                <div class="col-6 poang-siffror"><h5>{{poang}}</h5></div>
+                <div class="col-6 poang-siffror"><h5>{{ person.points }}</h5></div>
               </div>
               <img class="card-img bonus-pic img-fluid" :src="popcorn" alt="bonus">
               <div class="card-footer poang-foot">
@@ -150,10 +150,6 @@ export default {
         popcorn: popcorn,
         person: [],
         personsbookings: [],
-        firstName: '',
-        lastName: '',
-        kundnummer: '',
-        poang: '',
         titel: [],
         biodatum: [],
         bokningsid: ''
@@ -161,13 +157,12 @@ export default {
       }
     },
 created(){
-  this.$axios.get("mypage.php").then((response) => {
-    this.person = response.data;
-    this.firstName = this.person[0].firstname;
-    this.lastName = this.person[0].lastname;
-    this.kundnummer = this.person[0].id;
-    this.poang = this.person[0].points;
-  });
+
+  this.person = this.$ls.get("user");
+
+  if( this.person == null ) {
+    this.logout();
+  }
 
   this.$axios.get("bookinghistory.php").then((response) => {
     this.personsbookings = response.data;
@@ -201,6 +196,8 @@ methods:{
       this.$axios.post('logout.php').then(response => {
         this.loading = false;
         this.user = {};
+        this.$ls.clear();
+        this.$router.push('/');
       }).catch(error => {
         console.log('logout error', error);
         this.loading = false;
