@@ -148,6 +148,7 @@
         this.showingLogin = false;
         if(response.data.loggedIn) {
           this.user = response.data.user;
+          this.$ls.set("user", this.user);
           this.$router.push('MyPages');
         } else {
           this.message = 'Incorrect email/password';
